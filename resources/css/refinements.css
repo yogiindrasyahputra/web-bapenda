@@ -1,0 +1,33 @@
+/* Small visual refinements kept separate from the compact legacy stylesheet. */
+body {
+    background-color: var(--cream);
+    background-image: linear-gradient(rgba(14, 107, 98, .025) 1px, transparent 1px), linear-gradient(90deg, rgba(14, 107, 98, .025) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.stat-card {
+    overflow: hidden;
+    border-top: 3px solid var(--mint);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.stat-card:nth-child(2) { border-top-color: #f5d98e; }
+.stat-card:nth-child(3) { border-top-color: #f0b39b; }
+.stat-card:hover {
+    border-color: #c9dfd2;
+    box-shadow: 0 14px 30px rgba(25, 78, 64, .08);
+    transform: translateY(-3px);
+}
+
+.payment-row { transition: background .2s ease, padding .2s ease; }
+.payment-row:hover { padding-right: 8px; padding-left: 8px; background: #f8fcf9; }
+.notification { cursor: pointer; }
+.notification i[hidden] { display: none; }
+.navigation { scrollbar-width: none; }
+.navigation::-webkit-scrollbar { display: none; }
+
+@media (max-width: 620px) {
+    .navigation { overflow-x: auto; }
+    .topbar { align-items: flex-start; }
+    .payment-row { grid-template-columns: 34px minmax(0, 1fr); }
+}

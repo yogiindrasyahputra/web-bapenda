@@ -1,0 +1,86 @@
+[1mdiff --git a/resources/views/publikasi/index.blade.php b/resources/views/publikasi/index.blade.php[m
+[1mindex e8b4b21..fb98a02 100644[m
+[1m--- a/resources/views/publikasi/index.blade.php[m
+[1m+++ b/resources/views/publikasi/index.blade.php[m
+[36m@@ -1,49 +1,201 @@[m
+ @extends('layouts.app')[m
+ [m
+ @section('content')[m
+[31m-<div class="container">[m
+[31m-    <div class="row mb-4">[m
+[31m-        <div class="col-md-12">[m
+[31m-            <h1>Publikasi</h1>[m
+[32m+[m[32m@if($isNewsletter)[m
+[32m+[m[32m<div class="newsletter-page">[m
+[32m+[m[32m    <header class="newsletter-hero">[m
+[32m+[m[32m        <div class="newsletter-hero-inner">[m
+[32m+[m[32m            <a href="{{ route('dashboard') }}" class="newsletter-back">BERANDA</a>[m
+[32m+[m[32m            <span class="newsletter-eyebrow">PUBLIKASI DDTC</span>[m
+[32m+[m[32m            <h1>Newsletter Perpajakan</h1>[m
+[32m+[m[32m            <p>Wawasan singkat dan praktis mengenai perkembangan regulasi serta isu perpajakan domestik dan internasional dari DDTC.</p>[m
+         </div>[m
+[31m-    </div>[m
+[32m+[m[32m    </header>[m
+ [m
+[31m-    <div class="row">[m
+[31m-        @forelse($publikasi as $item)[m
+[31m-            <div class="col-md-4 mb-4">[m
+[31m-                <div class="card h-100">[m
+[31m-                    @if($item->gambar)[m
+[31m-                        <img src="{{ asset('storage/' . $item->gambar) }}" class="card-img-top" alt="{{ $item->judul }}" style="height: 200px; object-fit: cover;">[m
+[31m-                    @else[m
+[31m-                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">[m
+[31m-                            <span class="text-muted">Tidak ada gambar</span>[m
+[31m-                        </div>[m
+[31m-                    @endif[m
+[31m-                    <div class="card-body">[m
+[31m-                        <h5 class="card-title">{{ $item->judul }}</h5>[m
+[31m-                        <p class="card-text">{{ Str::limit($item->konten, 100) }}</p>[m
+[31m-                        <div class="d-flex justify-content-between align-items-center">[m
+[31m-                            <small class="text-muted">{{ $item->created_at->format('d-m-Y') }}</small>[m
+[31m-                            @if($item->status == 'aktif')[m
+[31m-                                <span class="badge bg-success">Aktif</span>[m
+[31m-                            @else[m
+[31m-                                <span class="badge bg-danger">Nonaktif</span>[m
+[31m-                            @endif[m
+[31m-                        </div>[m
+[32m+[m[32m    <main class="newsletter-content">[m
+[32m+[m[32m        <div class="newsletter-heading">[m
+[32m+[m[32m            <div>[m
+[32m+[m[32m                <span class="newsletter-label">NEWSLETTER</span>[m
+[32m+[m[32m                <h2>Ikuti perkembangan pajak terbaru</h2>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <a href="{{ $newsletterSource }}" target="_blank" rel="noopener noreferrer" class="newsletter-source">Lihat semua newsletter ↗</a>[m
+[32m+[m[32m        </div>[m
+[32m+[m
+[32m+[m[32m        <section class="newsletter-grid" aria-label="Daftar newsletter DDTC">[m
+[32m+[m[32m            @foreach($newsletters as $newsletter)[m
+[32m+[m[32m                <article class="newsletter-card">[m
+[32m+[m[32m                    <div class="newsletter-card-cover">[m
+[32m+[m[32m                        <img src="{{ $newsletter['image'] }}" alt="{{ $newsletter['title'] }}" loading="lazy">[m
+[32m+[m[32m                        <span>DDTC<br><strong>NEWS</strong></span>[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <div class="newsletter-card-body">[m
+[32m+[m[32m                        <span class="newsletter-type">NEWSLETTER</span>[m
+[32m+[m[32m                        <h3>{{ $newsletter['title'] }}</h3>[m
+[32m+[m[32m                        <p>{{ $newsletter['description'] }}</p>[m
+[32m+[m[32m                        <a href="{{ $newsletter['url'] }}" target="_blank" rel="noopener noreferrer" class="newsletter-link">Baca newsletter <span>↗</span></a>[m
+                     </div>[m
+[31m-                </div>[m
+[32m+[m[32m                </article>[m
+[32m+[m[32m            @endforeach[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        <section class="newsletter-note">[m
+[32m+[m[32m            <strong>Sumber resmi DDTC</strong>[m
+[32m+[m[32m            <p>Konten newsletter dirangkum dari katalog publikasi DDTC. Buka kartu untuk membaca artikel lengkap pada situs sumber.</p>[m
+[32m+[m[32m        </section>[m
+[32m+[m[32m    </main>[m
+[32m+[m[32m</div>[m
+[32m+[m[32m<style>[m
+[32m+[m[32m    .newsletter-page { min-height: 100vh; background: #f3f7f5; color: #173042; }[m
+[32m+[m[32m    .newsletter-hero { border-top: 5px solid #e8b84b; background: linear-gradient(118deg, rgba(10,40,60,.88), rgba(8,127,120,.58)), url('https://cdn.phototourl.com/member/2026-09-12-99a0cea5-88d4-4d18-a531-f011da78e5a0.jpg') center / cover; color: #fff; }[m
+[32m+[m[32m    .newsletter-hero-inner, .newsletter-content { width: min(100% - 32px, 1180px); margin: 0 auto; }[m
+[32m+[m[32m    .newsletter-hero-inner { padding: 42px 0 48px; }.newsletter-back, .newsletter-eyebrow, .newsletter-label { color: #c8f4e8; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-decoration: none; }.newsletter-back { display: inline-block; margin-bottom: 28px; }.newsletter-eyebrow, .newsletter-label { display: block; }.newsletter-eyebrow { color: #ffe08a; }.newsletter-hero h1 { margin: 0; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.25); font: 700 clamp(34px, 4vw, 50px)/1.08 'Playfair Display', serif; }.newsletter-hero p { max-width: 690px; margin: 16px 0 0; color: #f0fffb; font-size: clamp(14px, 1.2vw, 16px); line-height: 1.75; }[m
+[32m+[m[32m    .newsletter-content { padding: 42px 0 72px; }.newsletter-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 22px; }.newsletter-label { color: #087f78; }.newsletter-heading h2 { margin: 8px 0 0; color: #123f59; font: 700 clamp(26px, 3vw, 36px)/1.15 'Playfair Display', serif; }.newsletter-source, .newsletter-link { color: #087f78; font-size: 13px; font-weight: 800; }.newsletter-source:hover, .newsletter-link:hover { color: #1763a5; text-decoration: underline; }[m
+[32m+[m[32m    .newsletter-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }.newsletter-card { overflow: hidden; display: flex; flex-direction: column; border: 1px solid #dce8e3; border-top: 4px solid #087f78; border-radius: 12px; background: #fff; box-shadow: 0 10px 24px rgba(18, 63, 89, .07); transition: transform .2s ease, box-shadow .2s ease; }.newsletter-card:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(18,63,89,.13); }.newsletter-card:nth-child(3n + 2) { border-top-color: #3d78c4; }.newsletter-card:nth-child(3n + 3) { border-top-color: #e1a92e; }.newsletter-card-cover { position: relative; display: grid; place-items: center; height: 170px; overflow: hidden; color: #fff; background: #087f78; font: 700 22px/1.05 'Playfair Display', serif; text-align: center; }.newsletter-card-cover::after { position: absolute; inset: 0; content: ''; background: linear-gradient(135deg, rgba(18, 63, 89, .58), rgba(8, 127, 120, .32)); }.newsletter-card-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }.newsletter-card-cover span { z-index: 1; text-shadow: 0 2px 12px rgba(0, 0, 0, .35); }.newsletter-card-cover strong { font-size: 30px; letter-spacing: .04em; }.newsletter-card-body { display: flex; flex: 1; flex-direction: column; padding: 20px; }.newsletter-type { color: #087f78; font-size: 10px; font-weight: 800; letter-spacing: .1em; }.newsletter-card h3 { margin: 12px 0 10px; color: #123f59; font-size: 17px; line-height: 1.4; }.newsletter-card p { flex: 1; margin: 0 0 20px; color: #526b76; font-size: 13px;
