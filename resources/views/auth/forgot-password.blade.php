@@ -9,20 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #102a4c;
-            --blue: #1d2c63;
-            --yellow: #f0c52d;
-            --muted: #6f7d89;
-            --line: rgba(19, 45, 71, 0.14);
-            --field: #f6f7f8;
-            --page-bg: #e4edf3;
-            --card-bg: rgba(255, 255, 255, 0.94);
-            --toggle-bg: #e8edf3;
-            --toggle-dot: #ffffff;
-            --shadow: rgba(17, 45, 68, 0.16);
-        }
-
-        body.dark-theme {
             --navy: #edf4ff;
             --blue: #9ebeff;
             --yellow: #f8d765;
@@ -31,8 +17,6 @@
             --field: #1e293b;
             --page-bg: #111827;
             --card-bg: rgba(15, 23, 42, 0.94);
-            --toggle-bg: #1e293b;
-            --toggle-dot: #f8d765;
             --shadow: rgba(0, 0, 0, 0.38);
         }
 
@@ -52,50 +36,11 @@
             transition: background 0.25s ease, color 0.25s ease;
         }
 
-        .theme-toggle {
-            position: fixed;
-            top: 24px;
-            right: 28px;
-            z-index: 2;
-            width: 64px;
-            height: 32px;
-            padding: 4px;
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            background: var(--toggle-bg);
-            box-shadow: 0 8px 18px var(--shadow);
-            cursor: pointer;
-        }
-
-        .theme-toggle .toggle-knob {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: var(--toggle-dot);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.25s ease, background 0.25s ease;
-        }
-
-        body.dark-theme .theme-toggle .toggle-knob { transform: translateX(32px); }
-
-        .theme-toggle .toggle-label {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10px;
-            font-size: 0.72rem;
-            pointer-events: none;
-        }
-
         .reset-card {
             width: min(470px, 100%);
             padding: 38px 34px 32px;
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--line);
             border-radius: 22px;
             box-shadow: 0 24px 50px var(--shadow);
             transition: background 0.25s ease, box-shadow 0.25s ease;
@@ -137,22 +82,20 @@
         input { width: 100%; padding: 13px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--field); color: var(--navy); font: inherit; outline: none; }
         input:focus { border-color: #4776a8; box-shadow: 0 0 0 4px rgba(71, 118, 168, 0.12); }
         button { width: 100%; margin-top: 18px; padding: 13px 18px; border: 0; border-radius: 8px; background: var(--yellow); color: #142b59; font: inherit; font-weight: 800; cursor: pointer; }
-        .back { display: block; margin-top: 18px; color: #294d7a; text-align: center; text-decoration: none; font-size: 0.88rem; font-weight: 700; }
+        .back { display: block; margin-top: 18px; color: var(--blue); text-align: center; text-decoration: none; font-size: 0.88rem; font-weight: 700; }
         .message, .error { margin-bottom: 18px; padding: 11px 13px; border-radius: 8px; font-size: 0.86rem; }
-        .message { background: rgba(31, 157, 117, 0.1); color: #177457; }
-        .error { background: rgba(199, 53, 53, 0.08); color: #b83d3d; }
+        .message { background: rgba(31, 157, 117, 0.16); color: #8de3c0; }
+        .error { background: rgba(199, 53, 53, 0.16); color: #ff9b9b; }
 
-        .theme-toggle:focus-visible,
         input:focus-visible,
         button:focus-visible,
         .back:focus-visible {
-            outline: 3px solid rgba(71, 118, 168, 0.35);
+            outline: 3px solid rgba(158, 190, 255, 0.55);
             outline-offset: 3px;
         }
 
         @media (max-width: 520px) {
-            body { padding: 72px 16px 20px; }
-            .theme-toggle { top: 20px; right: 20px; }
+            body { padding: 24px 16px 20px; }
             .reset-card { padding: 30px 22px 26px; }
         }
         @keyframes auth-page-in { from { opacity: 0; transform: translateY(22px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -196,27 +139,5 @@
         <a class="back" href="{{ route('login') }}">Kembali ke halaman login</a>
     </main>
 
-    <button class="theme-toggle" type="button" aria-label="Ganti tema">
-        <span class="toggle-label"><span>☀</span><span>☾</span></span>
-        <span class="toggle-knob"></span>
-    </button>
-
-    <script>
-        const themeToggle = document.querySelector('.theme-toggle');
-        const body = document.body;
-
-        const applyTheme = function(theme) {
-            const isDark = theme === 'dark';
-            body.classList.toggle('dark-theme', isDark);
-            localStorage.setItem('auth-theme', theme);
-        };
-
-        const savedTheme = localStorage.getItem('auth-theme') || localStorage.getItem('login-theme') || 'light';
-        applyTheme(savedTheme);
-
-        themeToggle.addEventListener('click', function() {
-            applyTheme(body.classList.contains('dark-theme') ? 'light' : 'dark');
-        });
-    </script>
 </body>
 </html>

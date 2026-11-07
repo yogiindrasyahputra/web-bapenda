@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    </script>
     <title>Pajak Hotel | Kota Padangsidimpuan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +31,7 @@
         .quick-links { position:relative; z-index:2; display:grid; grid-template-columns:repeat(4,1fr); width:min(100% - 48px,1180px); margin:-42px auto 0; overflow:hidden; border-radius:10px; box-shadow:0 14px 34px rgba(18,63,89,.15); }.quick-link { display:flex; align-items:center; gap:13px; min-height:84px; padding:16px 19px; color:#fff; background:var(--teal); border-right:1px solid rgba(255,255,255,.16); }.quick-link:nth-child(2){background:#1763a5}.quick-link:nth-child(3){background:#315b86}.quick-link:nth-child(4){background:#d49425;border-right:0}.quick-icon { display:grid; place-items:center; flex:0 0 34px; width:34px; height:34px; border:1px solid rgba(255,255,255,.45); border-radius:8px; font-size:11px; font-weight:800; }.quick-link strong,.quick-link small { display:block; }.quick-link strong { font-size:12px; }.quick-link small { margin-top:4px; color:rgba(255,255,255,.75); font-size:10px; }
         .section { width:min(100% - 48px,1180px); margin:auto; padding:84px 0; }.section-heading { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:28px; }.section-heading h2,.info-grid h2 { margin:8px 0 0; color:var(--navy); font-family:'Playfair Display',serif; font-size:33px; }.section-heading p { max-width:400px; margin:0; color:var(--muted); font-size:13px; line-height:1.6; text-align:right; }.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }.service-card { padding:25px; border:1px solid var(--line); border-radius:10px; background:#fff; box-shadow:0 10px 24px rgba(18,63,89,.05); }.service-number { color:var(--teal); font-size:11px; font-weight:800; letter-spacing:.1em; }.service-card h3 { margin:26px 0 8px; color:var(--navy); font-size:18px; }.service-card p { min-height:45px; margin:0; color:var(--muted); font-size:12px; line-height:1.6; }.service-card a { display:inline-block; margin-top:20px; color:var(--teal); font-size:11px; font-weight:800; }
         .info-band { background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }.info-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:70px; align-items:center; }.info-grid h2 { margin:10px 0 13px; font-size:34px; }.info-grid p { margin:0; color:var(--muted); font-size:13px; line-height:1.75; }.about-copy { max-width:650px; }.about-copy p + p { margin-top:14px; }.about-lead { font-size:15px !important; font-weight:600; line-height:1.7 !important; }.about-points { display:grid; gap:11px; margin:22px 0 0; padding:0; list-style:none; }.about-points li { position:relative; padding-left:25px; color:var(--muted); font-size:12px; line-height:1.6; }.about-points li:before { position:absolute; top:.52em; left:0; width:10px; height:10px; border-radius:50%; content:''; background:var(--teal); box-shadow:0 0 0 4px rgba(8,127,120,.12); }.contact-list { display:grid; gap:14px; padding-left:22px; border-left:3px solid var(--gold); }.contact-list strong,.contact-list span { display:block; }.contact-list strong { color:var(--navy); font-size:12px; }.contact-list span { margin-top:4px; color:var(--muted); font-size:12px; line-height:1.5; }.contact-list a { color:var(--teal); font-weight:700; text-decoration:underline; text-underline-offset:3px; }.site-footer { padding:30px max(24px,calc((100% - 1180px)/2)); color:rgba(255,255,255,.7); background:var(--deep); font-size:11px; }.footer-inner { display:flex; justify-content:space-between; gap:24px; }.footer-brand { color:#fff; font-weight:800; letter-spacing:.05em; }
-        .news-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }.news-card { min-height:210px; padding:23px; border-radius:10px; background:var(--navy); color:#fff; }.news-card:nth-child(2) { background:#1763a5; }.news-card:nth-child(3) { background:#087f78; }.news-card:nth-child(4) { background:#315b86; }.news-card:nth-child(5) { background:#b9624e; }.news-card:nth-child(6) { background:#4f7e64; }.news-card small { color:rgba(255,255,255,.65); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }.news-card h3 { margin:24px 0 9px; font-family:'Playfair Display',serif; font-size:22px; line-height:1.15; }.news-card p { margin:0; color:rgba(255,255,255,.78); font-size:12px; line-height:1.6; }.news-card a { display:inline-block; margin-top:18px; color:var(--gold); font-size:11px; font-weight:800; }.gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:180px; gap:14px; }.gallery-item { min-height:0; padding:20px; display:flex; align-items:end; border-radius:12px; color:#fff; background-position:center; background-size:cover; box-shadow:inset 0 -120px 90px rgba(4,25,42,.62); }.gallery-item:nth-child(1) { grid-column:span 2; grid-row:span 2; background-image:url('https://cdn.phototourl.com/member/2026-09-15-7bddb6f7-9d71-4948-be5f-f6db839534c4.jpg'); }.gallery-item:nth-child(2) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-a255c570-921d-47a5-a945-42a1ff556038.jpg'); }.gallery-item:nth-child(3) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-6c428523-80d0-4a25-8ec4-f1f685078a88.jpg'); }.gallery-item:nth-child(4) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-f9800f90-90e5-41ff-b59c-38ae11b1d629.jpg'); }.gallery-item:nth-child(5) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-e120918a-137e-4667-a05d-23d6454ac79d.jpg'); }.gallery-item:nth-child(6) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-1bb6aa57-14fd-4fac-b1fe-0d828ee82c5d.jpg'); }.gallery-item:nth-child(7) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-1306fd55-656c-4f03-bed3-180cfb187cf0.jpg'); }.gallery-item:nth-child(8) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-5b82e149-9026-4a26-b335-a54bef272024.jpg'); }.gallery-item:nth-child(9) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-54ba6d84-b7dc-4dcf-bc32-8ea27c8e370f.jpg'); }.gallery-item:nth-child(10) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-5b9eb2d7-ef15-4986-986c-5570156f4706.jpg'); }.gallery-item:nth-child(11) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-9b15ba96-ccea-4bbc-a0d0-32ea16f7b035.jpg'); }.gallery-item:nth-child(12) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-3645fe6b-7b2e-47fe-9c8e-01d12a9da156.jpg'); }.gallery-item:nth-child(13) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-da073075-bb37-4431-8808-1c2b1bf26431.jpg'); }.gallery-item:nth-child(14) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-9a8568b4-9f51-4875-b520-7915ac02923e.jpg'); }.gallery-item:nth-child(15) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-70a5c6c0-02fd-4b81-baa9-b322b574502e.jpg'); }.gallery-item:nth-child(16) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-96885a17-c955-4bc9-aa11-ac4745e19a57.jpg'); }.gallery-item:nth-child(17) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-f60adb6a-940e-42a7-b246-fb7a3111b198.jpg'); }.gallery-item strong { font-size:12px; text-shadow:0 2px 8px rgba(0,0,0,.45); }
+        .news-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }.news-card { min-height:210px; padding:23px; border-radius:10px; background:var(--navy); color:#fff; }.news-card:nth-child(2) { background:#1763a5; }.news-card:nth-child(3) { background:#087f78; }.news-card:nth-child(4) { background:#315b86; }.news-card:nth-child(5) { background:#b9624e; }.news-card:nth-child(6) { background:#4f7e64; }.news-card.has-image { position:relative; isolation:isolate; background-position:center; background-size:cover; }.news-card.has-image:before { position:absolute; z-index:0; inset:0; border-radius:inherit; content:''; background:linear-gradient(180deg,rgba(5,24,38,.35),rgba(5,24,38,.88)); }.news-card.has-image > * { position:relative; z-index:1; }.news-card small { color:rgba(255,255,255,.65); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }.news-card h3 { margin:24px 0 9px; font-family:'Playfair Display',serif; font-size:22px; line-height:1.15; }.news-card p { margin:0; color:rgba(255,255,255,.78); font-size:12px; line-height:1.6; }.news-card a { display:inline-block; margin-top:18px; color:var(--gold); font-size:11px; font-weight:800; }.gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:180px; gap:14px; }.gallery-item { min-height:0; padding:20px; display:flex; align-items:end; border-radius:12px; color:#fff; background-position:center; background-size:cover; box-shadow:inset 0 -120px 90px rgba(4,25,42,.62); }.gallery-item:nth-child(1) { grid-column:span 2; grid-row:span 2; background-image:url('https://cdn.phototourl.com/member/2026-09-15-7bddb6f7-9d71-4948-be5f-f6db839534c4.jpg'); }.gallery-item:nth-child(2) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-a255c570-921d-47a5-a945-42a1ff556038.jpg'); }.gallery-item:nth-child(3) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-6c428523-80d0-4a25-8ec4-f1f685078a88.jpg'); }.gallery-item:nth-child(4) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-f9800f90-90e5-41ff-b59c-38ae11b1d629.jpg'); }.gallery-item:nth-child(5) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-e120918a-137e-4667-a05d-23d6454ac79d.jpg'); }.gallery-item:nth-child(6) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-1bb6aa57-14fd-4fac-b1fe-0d828ee82c5d.jpg'); }.gallery-item:nth-child(7) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-1306fd55-656c-4f03-bed3-180cfb187cf0.jpg'); }.gallery-item:nth-child(8) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-5b82e149-9026-4a26-b335-a54bef272024.jpg'); }.gallery-item:nth-child(9) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-54ba6d84-b7dc-4dcf-bc32-8ea27c8e370f.jpg'); }.gallery-item:nth-child(10) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-5b9eb2d7-ef15-4986-986c-5570156f4706.jpg'); }.gallery-item:nth-child(11) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-9b15ba96-ccea-4bbc-a0d0-32ea16f7b035.jpg'); }.gallery-item:nth-child(12) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-3645fe6b-7b2e-47fe-9c8e-01d12a9da156.jpg'); }.gallery-item:nth-child(13) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-da073075-bb37-4431-8808-1c2b1bf26431.jpg'); }.gallery-item:nth-child(14) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-9a8568b4-9f51-4875-b520-7915ac02923e.jpg'); }.gallery-item:nth-child(15) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-70a5c6c0-02fd-4b81-baa9-b322b574502e.jpg'); }.gallery-item:nth-child(16) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-96885a17-c955-4bc9-aa11-ac4745e19a57.jpg'); }.gallery-item:nth-child(17) { background-image:url('https://cdn.phototourl.com/member/2026-09-15-f60adb6a-940e-42a7-b246-fb7a3111b198.jpg'); }.gallery-item strong { font-size:12px; text-shadow:0 2px 8px rgba(0,0,0,.45); }
         :root { --coral:#e96f58; --sky:#2d86b8; }
         .news-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
         .news-card { min-height:235px; padding:25px; border-radius:14px; box-shadow:0 12px 24px rgba(18,63,89,.12); transition:transform .2s ease,box-shadow .2s ease; }
@@ -82,19 +85,43 @@
         .quick-icon { border-radius:50%; }
         .service-card { position:relative; overflow:hidden; transition:transform .2s ease,box-shadow .2s ease; }.service-card:before { position:absolute; top:0; left:0; width:100%; height:4px; content:''; background:var(--teal); }.service-card:nth-child(2):before { background:var(--sky); }.service-card:nth-child(3):before { background:var(--coral); }.service-card:hover { transform:translateY(-6px); box-shadow:0 18px 34px rgba(18,63,89,.12); }
         .news-card { position:relative; overflow:hidden; }.news-card.has-image { background-position:center; background-size:cover; }.news-card.has-image:before { position:absolute; inset:0; content:''; background:linear-gradient(145deg,rgba(7,31,52,.92),rgba(8,127,120,.58)); }.news-card:after { position:absolute; right:-28px; bottom:-58px; width:150px; height:150px; border:1px solid rgba(255,255,255,.2); border-radius:50%; content:''; box-shadow:0 0 0 18px rgba(255,255,255,.05); }.news-card > * { position:relative; z-index:1; }
-        .gallery-item { transition:transform .25s ease,filter .25s ease; }.gallery-item:hover { filter:saturate(1.2) brightness(1.08); transform:scale(1.02); }
-        .gallery-grid { position:relative; display:block; height:300px; overflow:hidden; border-radius:16px; background:#102b36; box-shadow:0 18px 38px rgba(18,63,89,.14); }
-        .gallery-item,.gallery-item:nth-child(1) { position:absolute; top:0; bottom:0; left:0; display:flex; width:calc((100% - 28px) / 3); min-height:100%; padding:24px; border-radius:14px; opacity:0; pointer-events:none; transform:scale(.97); transition:opacity .55s ease,transform .8s ease,filter .25s ease; }
-        .gallery-item.is-visible { opacity:1; pointer-events:auto; transform:scale(1); }
-        .gallery-item.is-active { opacity:1; }
-        .gallery-item strong { max-width:420px; font-size:clamp(16px,2vw,24px); }
-        .gallery-controls { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:16px; }
-        .gallery-arrow { display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--line); border-radius:50%; color:var(--ink); background:var(--surface,#fff); cursor:pointer; font-size:19px; transition:background .2s ease,color .2s ease,transform .2s ease; }
-        .gallery-arrow:hover { color:#fff; background:var(--teal); transform:translateY(-2px); }
-        .gallery-dots { display:flex; align-items:center; justify-content:center; gap:6px; max-width:calc(100% - 120px); overflow:hidden; }
-        .gallery-dot { width:7px; height:7px; padding:0; border:0; border-radius:50%; background:#b7c8cb; cursor:pointer; transition:width .2s ease,background .2s ease; }
-        .gallery-dot.is-active { width:22px; border-radius:999px; background:var(--teal); }
-        body.dark-theme .gallery-grid { background:#0d202a; }.dark-theme .gallery-arrow { color:#e7f1f3; border-color:#294652; background:#102733; }.dark-theme .gallery-dot { background:#42616b; }.dark-theme .gallery-dot.is-active { background:#8be0d1; }
+        .gallery-showcase { overflow:hidden; border:1px solid rgba(255,255,255,.9); border-radius:26px; background:var(--surface,#fff); box-shadow:0 32px 80px rgba(17,49,68,.17),0 8px 20px rgba(17,49,68,.07),inset 0 1px 0 rgba(255,255,255,.9); }
+        .gallery-grid { position:relative; display:block; height:clamp(400px,43vw,590px); overflow:hidden; border-radius:25px 25px 0 0; background:#102b36; isolation:isolate; }
+        .gallery-grid::after { position:absolute; z-index:2; inset:12px; border:1px solid rgba(255,255,255,.18); border-radius:17px; content:''; pointer-events:none; }
+        .gallery-item,.gallery-item:nth-child(1) { position:absolute; inset:0; display:flex; width:100%; min-height:100%; flex-direction:column; align-items:flex-start; justify-content:flex-end; gap:15px; padding:clamp(30px,6vw,76px); border-radius:0; color:#fff; background-position:center; background-size:cover; opacity:0; pointer-events:none; transform:scale(1.07); transition:opacity .9s ease,transform 7s cubic-bezier(.2,.65,.3,1); }
+        .gallery-item::before { position:absolute; inset:0; content:''; background:linear-gradient(90deg,rgba(5,23,36,.78),rgba(5,23,36,.34) 50%,rgba(5,23,36,.04)),linear-gradient(0deg,rgba(5,23,36,.58),transparent 62%),linear-gradient(180deg,rgba(5,23,36,.18),transparent 28%); }
+        .gallery-item.is-active { z-index:1; opacity:1; pointer-events:auto; transform:scale(1); }
+        .gallery-item:hover { filter:saturate(1.08); }
+        .gallery-item > * { position:relative; z-index:3; }
+        .gallery-item strong { max-width:720px; font-family:'Playfair Display',serif; font-size:clamp(26px,3.5vw,44px); font-weight:700; line-height:1.12; letter-spacing:-.025em; text-shadow:0 3px 20px rgba(0,0,0,.36); }
+        .gallery-slide-kicker { display:inline-flex; align-items:center; gap:9px; color:rgba(255,255,255,.9); font-size:10px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+        .gallery-slide-kicker::before { width:24px; height:1px; content:''; background:#f4c542; }
+        .gallery-slide-link { display:inline-flex; align-items:center; gap:12px; margin-top:6px; padding:11px 16px; border:1px solid rgba(255,255,255,.42); border-radius:999px; color:#fff; background:rgba(255,255,255,.1); box-shadow:0 8px 24px rgba(0,0,0,.12); backdrop-filter:blur(10px); font-size:11px; font-weight:700; letter-spacing:.025em; transition:background .2s ease,transform .2s ease; }
+        .gallery-slide-link::after { content:'↗'; color:#f4c542; font-size:14px; }
+        .gallery-item:hover .gallery-slide-link { transform:translateY(-2px); background:rgba(255,255,255,.2); }
+        .gallery-slide-index { position:absolute; z-index:3; top:clamp(30px,5vw,62px); right:clamp(30px,5vw,62px); display:inline-flex; align-items:center; gap:9px; padding:10px 14px; border:1px solid rgba(255,255,255,.25); border-radius:999px; color:#fff; background:rgba(9,27,40,.3); backdrop-filter:blur(12px); font-size:10px; font-weight:700; letter-spacing:.09em; }
+        .gallery-slide-index span:first-child { color:#f4c542; font-size:13px; font-variant-numeric:tabular-nums; }
+        .gallery-toolbar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:17px 22px 12px; }
+        .gallery-counter { display:flex; align-items:baseline; gap:6px; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+        .gallery-counter strong { color:var(--ink); font-size:20px; }
+        .gallery-counter span:last-child { margin-left:2px; }
+        .gallery-progress { height:3px; overflow:hidden; background:rgba(8,127,120,.1); }
+        .gallery-progress span { display:block; width:0; height:100%; background:linear-gradient(90deg,#087f78,#56b99c,#eabd4b); }
+        .gallery-progress.is-running span { animation:gallery-progress 6s linear forwards; }
+        @keyframes gallery-progress { to { width:100%; } }
+        .gallery-controls { display:flex; align-items:center; gap:8px; }
+        .gallery-dots { display:flex; flex:1; align-items:center; justify-content:center; gap:11px; max-width:720px; overflow-x:auto; padding:9px 5px 12px; scrollbar-width:thin; scrollbar-color:var(--teal) transparent; }
+        .gallery-dot { flex:0 0 96px; width:96px; height:62px; padding:0; border:2px solid transparent; border-radius:11px; background-color:#dce7e8; background-position:center; background-size:cover; cursor:pointer; opacity:.54; transition:opacity .25s ease,transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+        .gallery-dot:hover { opacity:1; transform:translateY(-2px); }
+        .gallery-dot.is-active { border-color:var(--teal); opacity:1; box-shadow:0 0 0 2px var(--surface,#fff),0 0 0 4px var(--teal),0 7px 16px rgba(8,127,120,.2); transform:translateY(-2px); }
+        .gallery-arrow,.gallery-toggle { display:grid; place-items:center; width:40px; height:40px; border:1px solid var(--line); border-radius:50%; color:var(--ink); background:var(--surface,#fff); cursor:pointer; font-size:19px; transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease; }
+        .gallery-toggle { font-size:12px; }
+        .gallery-arrow:hover,.gallery-toggle:hover { transform:translateY(-2px); border-color:var(--teal); color:#fff; background:var(--teal); }
+        .gallery-dot:focus-visible,.gallery-arrow:focus-visible,.gallery-toggle:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+        body.dark-theme .gallery-showcase { border-color:rgba(255,255,255,.08); background:#102330; box-shadow:0 24px 60px rgba(0,0,0,.3); }
+        body.dark-theme .gallery-arrow,body.dark-theme .gallery-toggle { border-color:#294652; color:#e7f1f3; background:#102733; }
+        body.dark-theme .gallery-arrow:hover,body.dark-theme .gallery-toggle:hover { border-color:#8be0d1; color:#102330; background:#8be0d1; }
+        body.dark-theme .gallery-counter strong { color:#e8f1f2; }
         @keyframes hero-reveal { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
         .hero { background:linear-gradient(90deg,rgba(5,48,79,.82),rgba(9,78,105,.5) 48%,rgba(8,102,96,.1)); }
         .hero-inner { position:relative; z-index:1; }
@@ -167,10 +194,10 @@
         body:not(.dark-theme) .news-card { box-shadow:0 15px 30px rgba(18,63,89,.15); }
         @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
         @media(max-width:850px){.quick-links{gap:10px}}
-        @media(max-width:850px){.gallery-grid{height:270px}.gallery-item,.gallery-item:nth-child(1){padding:18px}}
+        @media(max-width:850px){.gallery-grid{height:400px}.gallery-dot{flex-basis:82px;width:82px;height:54px}.gallery-controls{gap:10px}}
         @media(max-width:850px){.news-grid{grid-template-columns:repeat(2,1fr)}}
         @media(max-width:850px){.site-nav{flex-wrap:wrap;padding:15px 0}.nav-links{order:3;width:100%;justify-content:space-between;gap:12px;overflow-x:auto}.nav-links a{padding:10px 0}.quick-links{grid-template-columns:repeat(2,1fr)}.quick-link:nth-child(2){border-right:0}.quick-link:nth-child(3),.quick-link:nth-child(4){border-top:1px solid rgba(255,255,255,.16)}.info-grid{grid-template-columns:1fr;gap:30px}}
-        @media(max-width:600px){.top-strip-inner,.section-heading,.footer-inner{align-items:flex-start;flex-direction:column}.top-strip-inner span:last-child{display:none}.brand{min-width:auto}.brand-mark{flex-basis:40px;width:40px;height:40px;border-radius:10px 10px 13px 13px}.brand strong{font-size:11px}.nav-actions{margin-left:auto}.nav-register{display:none}.hero,.hero-inner{min-height:510px}.hero h1{font-size:42px}.hero p{font-size:13px}.section{padding:62px 0}.quick-links,.service-grid,.news-grid{grid-template-columns:1fr}.summary-band{grid-template-columns:1fr;margin-top:24px}.quick-link,.quick-link:nth-child(2),.quick-link:nth-child(3){border-right:0;border-bottom:1px solid rgba(255,255,255,.16)}.access-panel{grid-template-columns:1fr;padding:14px}.access-intro{grid-column:auto}.gallery-grid{height:220px}.gallery-item,.gallery-item:nth-child(1){padding:16px}.gallery-item strong{font-size:11px}.section-heading h2,.info-grid h2{font-size:28px}.section-heading p{text-align:left}}
+        @media(max-width:600px){.top-strip-inner,.section-heading,.footer-inner{align-items:flex-start;flex-direction:column}.top-strip-inner span:last-child{display:none}.brand{min-width:auto}.brand-mark{flex-basis:40px;width:40px;height:40px;border-radius:10px 10px 13px 13px}.brand strong{font-size:11px}.nav-actions{margin-left:auto}.nav-register{display:none}.hero,.hero-inner{min-height:510px}.hero h1{font-size:42px}.hero p{font-size:13px}.section{padding:62px 0}.quick-links,.service-grid,.news-grid{grid-template-columns:1fr}.summary-band{grid-template-columns:1fr;margin-top:24px}.quick-link,.quick-link:nth-child(2),.quick-link:nth-child(3){border-right:0;border-bottom:1px solid rgba(255,255,255,.16)}.access-panel{grid-template-columns:1fr;padding:14px}.access-intro{grid-column:auto}.gallery-grid{height:320px}.gallery-item,.gallery-item:nth-child(1){padding:24px}.gallery-item strong{font-size:36px}.gallery-controls{flex-wrap:wrap;justify-content:center}.gallery-dots{order:1;flex-basis:100%;max-width:100%;justify-content:flex-start}.gallery-dot{flex-basis:72px;width:72px;height:48px}.section-heading h2,.info-grid h2{font-size:28px}.section-heading p{text-align:left}}
         body.landing-page { --surface:#fff; --surface-soft:#f3f7f7; --ink:#16344b; --muted:#647988; --line:#dce7e8; --navy:#123d59; --deep:#0b2637; --teal:#087f78; --sky:#297db0; --gold:#eabd4b; --coral:#d76d5c; color:var(--ink); background:#f4f7f6; }
         body.landing-page.dark-theme { --surface:#102330; --surface-soft:#132c38; --ink:#e8f1f2; --muted:#aec0c7; --line:#29434d; --navy:#e8f1f2; --deep:#081923; color:var(--ink); background:#091923; }
         body.landing-page .top-strip { min-height:34px; display:flex; align-items:center; background:#092536; font-size:10px; letter-spacing:.035em; }
@@ -239,6 +266,106 @@
         @media(max-width:600px){body.landing-page .top-strip{min-height:30px}body.landing-page .site-nav{width:calc(100% - 32px);padding:12px 0}body.landing-page .brand{gap:9px}body.landing-page .brand-mark{flex-basis:46px;width:46px;height:50px;border-radius:12px}body.landing-page .brand-copy{gap:4px;padding-left:9px}body.landing-page .brand strong{max-width:165px;font-size:8px;letter-spacing:.055em}body.landing-page .brand small{font-size:7px;letter-spacing:.08em}body.landing-page .nav-actions{gap:5px}body.landing-page .nav-login,body.landing-page .nav-register{min-height:34px;padding:0 10px;font-size:9px}body.landing-page .nav-register{display:inline-flex}body.landing-page .nav-links{gap:23px}body.landing-page .nav-links a{font-size:10px}body.landing-page .nav-links a:after{bottom:5px}body.landing-page .hero-inner{width:calc(100% - 40px);padding:44px 0 68px}body.landing-page .hero h1{margin-top:16px;font-size:clamp(38px,10vw,52px)}body.landing-page .hero p{font-size:12px}body.landing-page .hero-primary,body.landing-page .hero-secondary{min-height:43px;padding:0 13px;font-size:10px}body.landing-page .quick-links{width:calc(100% - 32px);grid-template-columns:1fr;gap:9px;margin-top:-34px}body.landing-page .quick-link,body.landing-page .quick-link:nth-child(2),body.landing-page .quick-link:nth-child(3),body.landing-page .quick-link:nth-child(4){min-height:86px;padding:15px 16px}body.landing-page .quick-link:before{left:16px}body.landing-page .section{width:calc(100% - 40px);padding:58px 0}body.landing-page .section-heading{align-items:flex-start;flex-direction:column;gap:10px}body.landing-page .section-heading p{text-align:left}body.landing-page .service-grid,body.landing-page .news-grid{grid-template-columns:1fr}body.landing-page .service-card{padding:21px}body.landing-page .info-grid{gap:28px}}
         @media(max-width:380px){body.landing-page .site-nav{width:calc(100% - 24px)}body.landing-page .nav-links{gap:17px}body.landing-page .brand strong{max-width:145px}body.landing-page .nav-actions{gap:4px}body.landing-page .nav-login,body.landing-page .nav-register{padding:0 8px}}
         @media(prefers-reduced-motion:reduce){body.landing-page *,body.landing-page *:before,body.landing-page *:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+        body.landing-page:not(.dark-theme) { --ink:#17384d; --muted:#526978; }
+        body.landing-page .top-strip { color:#f5f8fa; font-size:12px; line-height:1.5; }
+        body.landing-page .brand strong { font-size:12px; }
+        body.landing-page .brand small { color:#70551f; font-size:10px; }
+        body.landing-page .nav-links { color:#405768; font-size:13px; }
+        body.landing-page .nav-links a:hover,
+        body.landing-page .nav-links a.active { color:#075f59; }
+        body.landing-page .nav-login,
+        body.landing-page .nav-register { font-size:12px; }
+        body.landing-page:not(.dark-theme) .section-heading .eyebrow { color:#80550e; font-size:12px; }
+        body.landing-page .hero .eyebrow { font-size:12px; }
+        body.landing-page .hero h1 { font-size:clamp(44px,5.2vw,68px); line-height:1.1; }
+        body.landing-page .hero p { color:#f7fbfc; font-size:16px; line-height:1.75; }
+        body.landing-page .hero-primary,
+        body.landing-page .hero-secondary { font-size:12px; }
+        body.landing-page .quick-link strong { font-size:15px; line-height:1.4; }
+        body.landing-page .quick-link small { color:#4b606e; font-size:13px; line-height:1.5; }
+        body.landing-page .quick-link strong:after { font-size:12px; }
+        body.landing-page .access-intro span { color:#f1f6f8; font-size:13px; line-height:1.6; }
+        body.landing-page .access-link b { font-size:13px; }
+        body.landing-page .access-link small { color:#f1f6f8; font-size:12px; }
+        body.landing-page .section-heading h2,
+        body.landing-page .info-grid h2 { font-size:clamp(30px,3vw,38px); line-height:1.2; }
+        body.landing-page:not(.dark-theme) .section-heading p,
+        body.landing-page:not(.dark-theme) .info-grid p,
+        body.landing-page:not(.dark-theme) .service-card p,
+        body.landing-page:not(.dark-theme) .quick-link small,
+        body.landing-page:not(.dark-theme) .contact-list span { color:#526978; }
+        body.landing-page .section-heading p,
+        body.landing-page .info-grid p,
+        body.landing-page .service-card p { font-size:15px; line-height:1.75; }
+        body.landing-page .service-number { font-size:12px; }
+        body.landing-page .service-card h3 { font-size:21px; line-height:1.35; }
+        body.landing-page .service-card a,
+        body.landing-page .contact-list a { font-size:13px; }
+        body.landing-page .news-card small { color:#f5f8fa; font-size:12px; line-height:1.5; }
+        body.landing-page .news-card h3 { font-size:22px; line-height:1.35; text-shadow:0 1px 5px rgba(0,0,0,.5); }
+        body.landing-page:not(.dark-theme) .news-card h3 { color:#fff; }
+        body.landing-page .news-card p { color:#f7f9fa; font-size:15px; line-height:1.7; text-shadow:0 1px 4px rgba(0,0,0,.5); }
+        body.landing-page .news-card a { color:#ffe39a; font-size:13px; }
+        body.landing-page .gallery-item strong { max-width:720px; font-size:clamp(26px,3.5vw,44px); line-height:1.12; letter-spacing:-.025em; text-shadow:0 3px 20px rgba(0,0,0,.36); }
+        body.landing-page .gallery-slide-kicker { font-size:10px; }
+        body.landing-page .gallery-slide-link { font-size:11px; }
+        body.landing-page .gallery-toolbar { min-height:76px; }
+        body.landing-page .gallery-dot { flex-basis:96px; width:96px; height:62px; }
+        body.landing-page .gallery-grid { height:clamp(400px,43vw,590px); }
+        body.landing-page .gallery-item { padding:clamp(30px,6vw,76px); }
+        body.landing-page .gallery-showcase { margin-top:4px; }
+        body.landing-page .contact-list strong { font-size:15px; }
+        body.landing-page .contact-list span { font-size:14px; line-height:1.65; }
+        body.landing-page .site-footer { color:#f1f5f7; font-size:13px; line-height:1.65; }
+        body.landing-page .footer-brand { font-size:13px; }
+        body.landing-page.dark-theme .brand small { color:#e4cb8b; }
+        body.landing-page.dark-theme .nav-links { color:#d1dee3; }
+        body.landing-page.dark-theme .nav-links a:hover,
+        body.landing-page.dark-theme .nav-links a.active { color:#9ee4d8; }
+        body.landing-page.dark-theme .nav-login { color:#145d57; }
+        body.landing-page.dark-theme .nav-register { color:#18323e; }
+        body.landing-page.dark-theme .quick-link small,
+        body.landing-page.dark-theme .service-card p,
+        body.landing-page.dark-theme .section-heading p,
+        body.landing-page.dark-theme .info-grid p,
+        body.landing-page.dark-theme .contact-list span { color:#c0d0d6; }
+        body.landing-page.dark-theme .access-intro span,
+        body.landing-page.dark-theme .access-link small { color:#f1f6f8; }
+        @media(max-width:850px) {
+            body.landing-page .nav-links { font-size:13px; }
+        }
+        @media(max-width:600px) {
+            body.landing-page .gallery-grid { height:340px; }
+            body.landing-page .gallery-item { padding:28px; }
+            body.landing-page .gallery-item strong { font-size:clamp(23px,6vw,30px); }
+            body.landing-page .gallery-slide-index { top:26px; right:26px; padding:8px 11px; font-size:9px; }
+            body.landing-page .gallery-toolbar { gap:8px; padding:12px 14px 9px; }
+            body.landing-page .gallery-dots { justify-content:flex-start; gap:8px; }
+            body.landing-page .gallery-dot { flex-basis:76px; width:76px; height:50px; }
+            body.landing-page .gallery-arrow,
+            body.landing-page .gallery-toggle { flex:0 0 36px; width:36px; height:36px; }
+            body.landing-page .gallery-counter strong { font-size:17px; }
+        }
+        @media(max-width:600px) {
+            body.landing-page .brand strong { font-size:10px; }
+            body.landing-page .brand small { font-size:9px; }
+            body.landing-page .nav-login,
+            body.landing-page .nav-register { font-size:11px; }
+            body.landing-page .nav-links a { font-size:12px; }
+            body.landing-page .hero h1 { font-size:clamp(38px,10vw,52px); }
+            body.landing-page .hero p { font-size:15px; }
+            body.landing-page .hero-primary,
+            body.landing-page .hero-secondary { font-size:12px; }
+            body.landing-page .quick-link strong { font-size:15px; }
+            body.landing-page .quick-link small { font-size:13px; }
+            body.landing-page .section-heading h2,
+            body.landing-page .info-grid h2 { font-size:29px; }
+            body.landing-page .section-heading p,
+            body.landing-page .info-grid p,
+            body.landing-page .service-card p { font-size:15px; }
+            body.landing-page .gallery-item strong { font-size:clamp(23px,6vw,30px); }
+        }
     </style>
 </head>
 <body class="landing-page">
@@ -272,68 +399,187 @@
         <section class="section access-section"><div class="access-panel"><div class="access-intro"><strong>Akses publik cepat</strong><span>Temukan informasi penting dan kanal resmi daerah.</span></div><a class="access-link" href="https://lapor.go.id/" target="_blank" rel="noopener noreferrer"><span>↗</span><span><b>LAPOR!</b><small>Sampaikan aspirasi</small></span></a><a class="access-link" href="https://bpkpd.padangsidimpuankota.go.id/struktur-organisasi/" target="_blank" rel="noopener noreferrer"><span>↗</span><span><b>BPKPD</b><small>Portal pendapatan daerah</small></span></a><a class="access-link" href="https://web.padangsidimpuankota.go.id/berita" target="_blank" rel="noopener noreferrer"><span>↗</span><span><b>Berita Pemko</b><small>Kabar terbaru daerah</small></span></a></div></section>
         <section class="section" id="layanan"><div class="section-heading"><div><span class="eyebrow">Layanan utama</span><h2>Informasi dalam satu tempat</h2></div><p>Akses informasi pajak hotel secara cepat, tertib, dan transparan melalui portal resmi Pemerintah Kota Padangsidimpuan.</p></div><div class="service-grid"><article class="service-card"><span class="service-number">01 / INFORMASI</span><h3>Ketentuan Pajak Hotel</h3><p>Pahami objek, tarif, masa pajak, dan kewajiban pelaporan pajak hotel.</p><a href="{{ route('peraturan.index') }}">Lihat peraturan -></a></article><article class="service-card"><span class="service-number">02 / DATA PUBLIK</span><h3>Direktori Hotel</h3><p>Temukan informasi hotel terdaftar beserta status dan lokasinya.</p><a href="{{ route('hotel.index') }}">Buka direktori -></a></article><article class="service-card"><span class="service-number">03 / PELAYANAN</span><h3>Panduan Pembayaran</h3><p>Ikuti langkah pembayaran dan pelaporan pajak hotel dengan benar.</p><a href="{{ route('laporan.index') }}">Baca panduan -></a></article></div></section>
         <section class="section"><div class="section-heading"><div><span class="eyebrow">Berita dan pengumuman</span><h2>Kabar pelayanan daerah</h2></div><p>Berita terbaru Pemerintah Kota Padangsidimpuan, diperbarui otomatis setiap hari.</p></div><div class="news-grid">@forelse($cityNews ?? [] as $news)<article class="news-card{{ !empty($news['image']) ? ' has-image' : '' }}" @if (!empty($news['image'])) style="background-image: url('{{ $news['image'] }}');" @endif><small>Berita Pemko Padangsidimpuan</small><h3>{{ $news['title'] }}</h3><p>{{ $news['description'] }}</p><a href="{{ $news['url'] }}" target="_blank" rel="noopener noreferrer">Baca berita -></a></article>@empty<article class="news-card"><small>Informasi utama</small><h3>Berita terbaru Pemerintah Kota Padangsidimpuan.</h3><p>Kunjungi sumber berita resmi untuk membaca informasi pelayanan dan kegiatan daerah.</p><a href="https://web.padangsidimpuankota.go.id/berita" target="_blank" rel="noopener noreferrer">Lihat berita -></a></article>@endforelse</div></section>
-        <section class="section"><div class="section-heading"><div><span class="eyebrow">Galeri daerah</span><h2>Potret Padangsidimpuan</h2></div><p>Kumpulan foto daerah, pelayanan, dan kegiatan pembangunan yang tersusun dalam satu galeri.</p></div><div class="gallery-grid"><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 1"><strong>Padangsidimpuan</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 2"><strong>Pelayanan publik</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 3"><strong>Kegiatan daerah</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 4"><strong>Pembangunan daerah</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 5"><strong>Ruang kota</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 6"><strong>Wajah daerah</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 7"><strong>Kolaborasi</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 8"><strong>Untuk masyarakat</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 9"><strong>Layanan daerah</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 10"><strong>Informasi publik</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 11"><strong>Semangat pembangunan</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 12"><strong>Kota yang tumbuh</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 13"><strong>Pelayanan terbuka</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 14"><strong>Partisipasi warga</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 15"><strong>Daerah berdaya</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 16"><strong>Potensi lokal</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 17"><strong>Padangsidimpuan maju</strong></a></div></section>
             <section class="section"><div class="section-heading"><div><span class="eyebrow">Galeri daerah</span><h2>Potret Padangsidimpuan</h2></div><p>Kumpulan foto daerah, pelayanan, dan kegiatan pembangunan yang tersusun dalam slideshow.</p></div><div class="gallery-grid"><a class="gallery-item is-active" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 1"><strong>Padangsidimpuan</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 2"><strong>Pelayanan publik</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 3"><strong>Kegiatan daerah</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 4"><strong>Pembangunan daerah</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 5"><strong>Ruang kota</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 6"><strong>Wajah daerah</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 7"><strong>Kolaborasi</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 8"><strong>Untuk masyarakat</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 9"><strong>Layanan daerah</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 10"><strong>Informasi publik</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 11"><strong>Semangat pembangunan</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 12"><strong>Kota yang tumbuh</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 13"><strong>Pelayanan terbuka</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 14"><strong>Partisipasi warga</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 15"><strong>Daerah berdaya</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 16"><strong>Potensi lokal</strong></a><a class="gallery-item" href="{{ route('publikasi.index') }}" aria-label="Buka galeri foto 17"><strong>Padangsidimpuan maju</strong></a></div><div class="gallery-controls"><button class="gallery-arrow" type="button" data-gallery-prev aria-label="Foto sebelumnya">&lsaquo;</button><div class="gallery-dots" aria-label="Pilih foto galeri">@for($galleryIndex = 0; $galleryIndex < 17; $galleryIndex++)<button class="gallery-dot {{ $galleryIndex === 0 ? 'is-active' : '' }}" type="button" data-gallery-dot="{{ $galleryIndex }}" aria-label="Tampilkan foto {{ $galleryIndex + 1 }}"></button>@endfor</div><button class="gallery-arrow" type="button" data-gallery-next aria-label="Foto berikutnya">&rsaquo;</button></div></section>
-        <section class="info-band" id="kontak"><div class="section info-grid"><div class="about-copy"><span class="eyebrow">Tentang portal</span><h2>Kolaborasi untuk Padangsidimpuan yang lebih maju.</h2><p class="about-lead">Portal Sistem Informasi Pajak Hotel hadir sebagai ruang informasi dan pelayanan publik yang terbuka, mudah diakses, dan dapat digunakan bersama.</p><p>Melalui portal ini, wajib pajak dapat memperoleh informasi mengenai ketentuan pajak hotel, direktori hotel, panduan pembayaran, serta layanan pengaduan secara lebih terarah. Masyarakat juga dapat ikut memantau informasi daerah dan memahami bagaimana pajak berperan dalam mendukung pembangunan.</p><p>Pengelolaan informasi yang tertib membantu Pemerintah Kota Padangsidimpuan meningkatkan kualitas pelayanan, memperluas keterbukaan data, dan membangun komunikasi yang lebih baik dengan wajib pajak.</p><ul class="about-points"><li>Informasi pajak hotel yang jelas dan mudah dipahami.</li><li>Akses layanan publik yang praktis dari satu portal.</li><li>Mendorong kepatuhan dan partisipasi dalam pembangunan daerah.</li></ul></div><div class="contact-list"><div><strong>Alamat</strong><span>88Q4+7W4, Palopat PK, Kec. Padangsidimpuan Utara, Kota Padang Sidempuan, Sumatera Utara 22733</span></div><div><strong>Pelayanan</strong><span><a href="https://lapor.go.id/" target="_blank" rel="noopener noreferrer">https://lapor.go.id/</a></span></div><div><strong>Butuh bantuan?</strong><span><a href="https://bpkpd.padangsidimpuankota.go.id/struktur-organisasi/" target="_blank" rel="noopener noreferrer">https://bpkpd.padangsidimpuankota.go.id/struktur-organisasi/</a></span></div><div><strong>Telepon</strong><span><a href="tel:+6263427075">(0634) 27075</a></span></div><div><strong>Email</strong><span><a href="mailto:bpkpd@padangsidimpuankota.go.id">bpkpd@padangsidimpuankota.go.id</a></span></div><div><strong>Instagram</strong><span><a href="https://www.instagram.com/bpkpdsidempuan?stkn=ejd2bDQxeDZra3V6" target="_blank" rel="noopener noreferrer">@bpkpdsidempuan</a></span></div></div></div></section>
+        <section class="info-band" id="kontak"><div class="section info-grid"><div class="about-copy"><span class="eyebrow">Tentang portal</span><h2>Kolaborasi untuk Padangsidimpuan yang lebih maju.</h2><p class="about-lead">Portal Sistem Informasi Pajak Hotel hadir sebagai ruang informasi dan pelayanan publik yang terbuka, mudah diakses, dan dapat digunakan bersama.</p><p>Melalui portal ini, wajib pajak dapat memperoleh informasi mengenai ketentuan pajak hotel, direktori hotel, panduan pembayaran, serta layanan pengaduan secara lebih terarah. Masyarakat juga dapat ikut memantau informasi daerah dan memahami bagaimana pajak berperan dalam mendukung pembangunan.</p><p>Pengelolaan informasi yang tertib membantu Pemerintah Kota Padangsidimpuan meningkatkan kualitas pelayanan, memperluas keterbukaan data, dan membangun komunikasi yang lebih baik dengan wajib pajak.</p><ul class="about-points"><li>Informasi pajak hotel yang jelas dan mudah dipahami.</li><li>Akses layanan publik yang praktis dari satu portal.</li><li>Mendorong kepatuhan dan partisipasi dalam pembangunan daerah.</li></ul></div><div class="contact-list"><div><strong>Alamat</strong><span>88Q4+7W4, Palopat PK, Kec. Padangsidimpuan Utara, Kota Padang Sidempuan, Sumatera Utara 22733</span></div><div><strong>Pelayanan</strong><span><a href="https://lapor.go.id/" target="_blank" rel="noopener noreferrer">https://lapor.go.id/</a></span></div><div><strong>Butuh bantuan?</strong><span><a href="https://bpkpd.padangsidimpuankota.go.id/" target="_blank" rel="noopener noreferrer">https://bpkpd.padangsidimpuankota.go.id/</a></span></div><div><strong>Telepon</strong><span><a href="tel:+6263427075">(0634) 27075</a></span></div><div><strong>Email</strong><span><a href="mailto:bpkpd@padangsidimpuankota.go.id">bpkpd@padangsidimpuankota.go.id</a></span></div><div><strong>Instagram</strong><span><a href="https://www.instagram.com/bpkpdsidempuan?stkn=ejd2bDQxeDZra3V6" target="_blank" rel="noopener noreferrer">@bpkpdsidempuan</a></span></div></div></div></section>
     </main>
     <footer class="site-footer"><div class="footer-inner"><span class="footer-brand">SISTEM INFORMASI PAJAK HOTEL PADANGSIDIMPUAN</span><span>&copy; {{ date('Y') }} Pemerintah Kota Padangsidimpuan</span></div></footer>
 </div>
 <script>
     (function () {
-        const galleries = document.querySelectorAll('.gallery-grid');
-        if (galleries.length > 1) {
-            galleries[0].closest('.section').remove();
-        }
-
         const gallery = document.querySelector('.gallery-grid');
         if (!gallery) return;
 
         const slides = Array.from(gallery.querySelectorAll('.gallery-item'));
-        const dots = Array.from(document.querySelectorAll('[data-gallery-dot]'));
+        const captions = [
+            'Alaman Bolak dari udara',
+            'Keramaian pusat kota',
+            'Jalanan kota pada malam hari',
+            'Kantor BPKPD Padangsidimpuan',
+            'Padangsidimpuan di malam hari',
+            'Kegiatan kebersamaan masyarakat',
+            'Penyerahan dokumen pelayanan',
+            'Pembangunan fasilitas daerah',
+            'Pelayanan masyarakat di lapangan',
+            'Aktivitas pasar dan UMKM',
+            'Gedung fasilitas pelayanan',
+            'Lingkungan kantor pemerintahan',
+            'Kebersamaan dalam kegiatan daerah',
+            'Koordinasi dan kerja sama lintas instansi',
+            'Rapat koordinasi pemerintahan',
+            'Pertunjukan seni dan hiburan daerah',
+            'Forum sosialisasi dan informasi publik',
+        ];
+        const controls = gallery.parentElement.querySelector('.gallery-controls');
+        if (!controls || slides.length === 0) return;
+
+        const showcase = document.createElement('div');
+        showcase.className = 'gallery-showcase';
+        gallery.parentElement.insertBefore(showcase, gallery);
+        showcase.append(gallery, controls);
+
+        const dots = Array.from(controls.querySelectorAll('[data-gallery-dot]'));
+        const dotsContainer = controls.querySelector('.gallery-dots');
         const previousButton = document.querySelector('[data-gallery-prev]');
         const nextButton = document.querySelector('[data-gallery-next]');
-        const groupSize = 3;
-        const groupCount = Math.ceil(slides.length / groupSize);
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         let activeIndex = 0;
         let timer;
+        let isPlaying = !reducedMotion;
+        const progress = document.createElement('div');
+        progress.className = 'gallery-progress';
+        progress.setAttribute('aria-hidden', 'true');
+        progress.innerHTML = '<span></span>';
+        showcase.insertBefore(progress, controls);
 
-        function showSlide(index) {
-            activeIndex = (index + groupCount) % groupCount;
-            const firstSlide = activeIndex * groupSize;
+        function restartProgress() {
+            progress.classList.remove('is-running');
+            void progress.offsetWidth;
+            if (isPlaying) progress.classList.add('is-running');
+        }
+
+        function showSlide(index, keepThumbnailVisible = false) {
+            activeIndex = (index + slides.length) % slides.length;
             slides.forEach(function (slide, slideIndex) {
-                const groupPosition = slideIndex - firstSlide;
-                const isVisible = groupPosition >= 0 && groupPosition < groupSize;
-                slide.classList.toggle('is-visible', isVisible);
-                slide.classList.toggle('is-active', slideIndex === firstSlide);
-                if (isVisible) {
-                    slide.style.left = groupPosition === 0
-                        ? '0'
-                        : groupPosition === 1
-                            ? 'calc((100% + 14px) / 3)'
-                            : 'calc((200% + 28px) / 3)';
+                const isActive = slideIndex === activeIndex;
+                slide.classList.toggle('is-active', isActive);
+                slide.setAttribute('aria-hidden', String(!isActive));
+                slide.tabIndex = isActive ? 0 : -1;
+                const slideIndexBadge = slide.querySelector('.gallery-slide-index span:first-child');
+                if (slideIndexBadge) {
+                    slideIndexBadge.textContent = String(slideIndex + 1).padStart(2, '0');
                 }
             });
             dots.forEach(function (dot, dotIndex) {
-                dot.style.display = dotIndex < groupCount ? 'block' : 'none';
                 dot.classList.toggle('is-active', dotIndex === activeIndex);
                 dot.setAttribute('aria-current', dotIndex === activeIndex ? 'true' : 'false');
+                if (dotIndex === activeIndex && keepThumbnailVisible) {
+                    const dotLeft = dot.offsetLeft;
+                    const dotRight = dotLeft + dot.offsetWidth;
+                    const visibleLeft = dotsContainer.scrollLeft;
+                    const visibleRight = visibleLeft + dotsContainer.clientWidth;
+
+                    if (dotLeft < visibleLeft || dotRight > visibleRight) {
+                        dotsContainer.scrollTo({
+                            left: Math.max(0, dotLeft - (dotsContainer.clientWidth - dot.offsetWidth) / 2),
+                            behavior: reducedMotion ? 'auto' : 'smooth',
+                        });
+                    }
+                }
             });
+            currentCount.textContent = String(activeIndex + 1).padStart(2, '0');
+            restartProgress();
         }
 
-        function restartTimer() {
-            window.clearInterval(timer);
-            timer = window.setInterval(function () { showSlide(activeIndex + 1); }, 5000);
-        }
+        const counter = document.createElement('div');
+        counter.className = 'gallery-counter';
+        counter.setAttribute('aria-live', 'polite');
+        const currentCount = document.createElement('strong');
+        const totalCount = document.createElement('span');
+        totalCount.textContent = '/ ' + String(slides.length).padStart(2, '0');
+        counter.append(currentCount, totalCount);
+        controls.prepend(counter);
 
-        previousButton.addEventListener('click', function () { showSlide(activeIndex - 1); restartTimer(); });
-        nextButton.addEventListener('click', function () { showSlide(activeIndex + 1); restartTimer(); });
-        dots.forEach(function (dot) {
-            dot.addEventListener('click', function () { showSlide(Number(dot.dataset.galleryDot)); restartTimer(); });
+        slides.forEach(function (slide, index) {
+            const title = captions[index] || `Foto ${index + 1}`;
+            slide.querySelector('strong').textContent = title;
+            const image = window.getComputedStyle(slide).backgroundImage;
+            const kicker = document.createElement('span');
+            const callToAction = document.createElement('span');
+            const slideIndex = document.createElement('span');
+            const slideTotal = document.createElement('span');
+            kicker.className = 'gallery-slide-kicker';
+            kicker.textContent = 'POTRET PADANGSIDIMPUAN';
+            callToAction.className = 'gallery-slide-link';
+            callToAction.textContent = 'Jelajahi publikasi';
+            slideIndex.className = 'gallery-slide-index';
+            slideIndex.setAttribute('aria-hidden', 'true');
+            slideTotal.textContent = '/ ' + String(slides.length).padStart(2, '0');
+            slideIndex.append(document.createElement('span'), slideTotal);
+            slide.prepend(kicker);
+            slide.append(slideIndex);
+            slide.append(callToAction);
+            slide.setAttribute('aria-label', `Buka publikasi: ${title}`);
+
+            const dot = dots[index];
+            if (!dot) return;
+            dot.style.backgroundImage = image;
+            dot.setAttribute('aria-label', `Tampilkan foto ${index + 1}: ${title}`);
         });
-        gallery.addEventListener('mouseenter', function () { window.clearInterval(timer); });
-        gallery.addEventListener('mouseleave', restartTimer);
+
+        const playbackButton = document.createElement('button');
+        playbackButton.className = 'gallery-toggle';
+        playbackButton.type = 'button';
+        controls.insertBefore(playbackButton, nextButton);
+
+        function updatePlayback() {
+            window.clearInterval(timer);
+            restartProgress();
+            playbackButton.textContent = isPlaying ? 'Ⅱ' : '▶';
+            playbackButton.setAttribute('aria-label', isPlaying ? 'Jeda slideshow' : 'Lanjutkan slideshow');
+            if (isPlaying) {
+                timer = window.setInterval(function () { showSlide(activeIndex + 1, true); }, 6000);
+            }
+        }
+
+        function moveTo(index) {
+            showSlide(index, true);
+            if (isPlaying) updatePlayback();
+        }
+
+        previousButton.addEventListener('click', function () { moveTo(activeIndex - 1); });
+        nextButton.addEventListener('click', function () { moveTo(activeIndex + 1); });
+        dots.forEach(function (dot) {
+            dot.addEventListener('click', function () { moveTo(Number(dot.dataset.galleryDot)); });
+        });
+        playbackButton.addEventListener('click', function () {
+            isPlaying = !isPlaying;
+            updatePlayback();
+        });
+        function pauseOnInteraction() {
+            window.clearInterval(timer);
+            progress.classList.remove('is-running');
+        }
+
+        gallery.addEventListener('mouseenter', pauseOnInteraction);
+        gallery.addEventListener('mouseleave', updatePlayback);
+        gallery.addEventListener('focusin', pauseOnInteraction);
+        gallery.addEventListener('focusout', function (event) {
+            if (!gallery.contains(event.relatedTarget)) updatePlayback();
+        });
+        controls.addEventListener('focusin', pauseOnInteraction);
+        controls.addEventListener('focusout', function (event) {
+            if (!controls.contains(event.relatedTarget)) updatePlayback();
+        });
+        gallery.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowLeft') moveTo(activeIndex - 1);
+            if (event.key === 'ArrowRight') moveTo(activeIndex + 1);
+        });
+        dots.forEach(function (dot) {
+            dot.addEventListener('mouseenter', pauseOnInteraction);
+            dot.addEventListener('mouseleave', updatePlayback);
+        });
         showSlide(0);
-        restartTimer();
+        updatePlayback();
     }());
 </script>
 </body>

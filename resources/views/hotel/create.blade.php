@@ -49,7 +49,7 @@
 
                             <div class="col-md-6">
                                 <label for="lat" class="form-label">Lintang</label>
-                                <input type="number" step="0.0001" class="form-control @error('lat') is-invalid @enderror" id="lat" name="lat" value="{{ old('lat', $hotel->lat ?? '') }}" placeholder="1.3721">
+                                <input type="number" step="0.0000001" min="-90" max="90" class="form-control @error('lat') is-invalid @enderror" id="lat" name="lat" value="{{ old('lat', $hotel->lat ?? '') }}" placeholder="1.3721">
                                 @error('lat')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -57,7 +57,7 @@
 
                             <div class="col-md-6">
                                 <label for="lng" class="form-label">Bujur</label>
-                                <input type="number" step="0.0001" class="form-control @error('lng') is-invalid @enderror" id="lng" name="lng" value="{{ old('lng', $hotel->lng ?? '') }}" placeholder="99.2730">
+                                <input type="number" step="0.0000001" min="-180" max="180" class="form-control @error('lng') is-invalid @enderror" id="lng" name="lng" value="{{ old('lng', $hotel->lng ?? '') }}" placeholder="99.2730">
                                 @error('lng')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="form-text">Format gambar JPG, PNG, atau WebP. Ukuran maksimal 4 MB.</div>
                                 @error('foto')
-                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>

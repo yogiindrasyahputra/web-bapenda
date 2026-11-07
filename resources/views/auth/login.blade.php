@@ -42,8 +42,8 @@
             --panel-blue-2: #0d1a3d;
             --brand-yellow: #f8d765;
             --text-dark: #edf4ff;
-            --text-soft: rgba(237, 244, 255, 0.72);
-            --muted: #a8b6c9;
+            --text-soft: #c4cfde;
+            --muted: #b7c5d9;
             --line: rgba(148, 163, 184, 0.2);
             --field-bg: #1e293b;
             --button: #f4d34d;
@@ -52,9 +52,9 @@
             --toggle-dot: #f8d765;
             --toggle-shadow: rgba(15, 23, 42, 0.55);
             --heading: #f5f8ff;
-            --link: #8fc9ff;
-            --icon: #a7bdd6;
-            --placeholder: rgba(237, 244, 255, 0.5);
+            --link: #9bd2ff;
+            --icon: #b3c4db;
+            --placeholder: #9aaac0;
             --focus: #65b8f0;
             --shell-border: rgba(148, 163, 184, 0.24);
             --shell-shadow: rgba(2, 8, 23, 0.5);
@@ -102,7 +102,6 @@
 
         .brand-top { animation: login-fade-up 0.35s 0.02s ease both; }
         .home-link { animation: login-fade-up 0.35s 0.04s ease both; }
-        .theme-toggle { animation: login-fade-up 0.35s 0.06s ease both; }
 
         .login-shell {
             animation: login-shell-in 0.45s 0.04s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -133,7 +132,7 @@
             align-items: center;
             gap: 12px;
             margin: 0;
-            font-size: clamp(0.82rem, 1.25vw, 1.2rem);
+            font-size: clamp(0.78rem, 1.05vw, 1.02rem);
             font-weight: 900;
             letter-spacing: 0;
             text-transform: uppercase;
@@ -177,13 +176,13 @@
         .home-link {
             position: absolute;
             top: 39px;
-            right: calc(5vw + 88px);
+            right: 5vw;
             z-index: 5;
             display: inline-flex;
             align-items: center;
             gap: 6px;
             color: var(--link);
-            font-size: 0.88rem;
+            font-size: 0.84rem;
             font-weight: 700;
             text-decoration: none;
         }
@@ -192,8 +191,8 @@
 
         @media (max-width: 520px) {
             .home-link {
-                top: 39px;
-                right: 98px;
+                top: 60px;
+                right: 18px;
                 font-size: 0.78rem;
             }
         }
@@ -260,21 +259,21 @@
         }
 
         .login-panel h1 {
-            margin: 0 0 18px;
+            margin: 0 0 14px;
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.8rem, 4vw, 4.2rem);
-            line-height: 1.02;
-            letter-spacing: -0.04em;
+            font-size: clamp(2.25rem, 3.2vw, 3.35rem);
+            line-height: 1.08;
+            letter-spacing: -0.035em;
             font-weight: 700;
             color: var(--heading);
         }
 
         .login-lede {
             max-width: 430px;
-            margin: -2px 0 30px;
+            margin: 0 0 26px;
             color: var(--text-soft);
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 0.96rem;
+            line-height: 1.65;
         }
 
         .eyebrow {
@@ -305,9 +304,10 @@
         .form-label {
             display: block;
             margin-bottom: 11px;
-            font-size: 0.95rem;
-            color: var(--muted);
+            font-size: 0.9rem;
+            color: #cbd5e1;
             font-weight: 600;
+            letter-spacing: 0.01em;
         }
 
         .input-wrap {
@@ -330,7 +330,7 @@
             border-radius: 9px;
             background: var(--field-bg);
             padding: 16px 54px 16px 54px;
-            font-size: 1rem;
+            font-size: 0.96rem;
             color: var(--text-dark);
             outline: none;
             transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -400,8 +400,9 @@
             border-radius: 13px;
             padding: 14px 16px;
             font: inherit;
+            font-size: 0.9rem;
             font-weight: 800;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
             color: var(--muted);
             background: transparent;
             cursor: pointer;
@@ -434,8 +435,8 @@
             justify-content: space-between;
             gap: 12px;
             margin: 2px 0 28px;
-            font-size: 0.96rem;
-            color: var(--muted);
+            font-size: 0.88rem;
+            color: #bdc9da;
         }
 
         .checkbox {
@@ -501,10 +502,11 @@
         }
 
         .login-helper {
-            margin-top: 28px;
+            margin-top: 24px;
             text-align: center;
-            font-size: 1rem;
-            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #bdc9da;
         }
 
         .login-helper a {
@@ -521,8 +523,8 @@
             margin-top: 24px;
             padding-top: 18px;
             border-top: 1px solid var(--line);
-            color: var(--muted);
-            font-size: 0.78rem;
+            color: #aebdd0;
+            font-size: 0.76rem;
             letter-spacing: 0.02em;
         }
 
@@ -539,53 +541,8 @@
             margin-top: 18px;
             text-align: center;
             color: var(--link);
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-        }
-
-        .theme-toggle {
-            position: absolute;
-            top: 28px;
-            right: 5vw;
-            z-index: 7;
-            width: 74px;
-            height: 38px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            background: var(--toggle-bg);
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), 0 6px 16px var(--toggle-shadow);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            padding: 5px;
-            transition: all 0.25s ease;
-        }
-
-        .theme-toggle .toggle-knob {
-            position: relative;
-            z-index: 1;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: var(--toggle-dot);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-            transition: transform 0.25s ease, background 0.25s ease;
-        }
-
-        body.dark-theme .theme-toggle .toggle-knob {
-            transform: translateX(36px);
-        }
-
-        .theme-toggle .toggle-label {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 9px;
-            font-size: 0.78rem;
-            color: var(--muted);
-            pointer-events: none;
         }
 
         .promo-panel {
@@ -695,7 +652,7 @@
             align-items: flex-start;
             gap: 0;
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.8rem, 4.8vw, 5rem);
+            font-size: clamp(2.35rem, 3.8vw, 4.1rem);
             line-height: 0.98;
             letter-spacing: 0;
             color: #f5fbff;
@@ -711,7 +668,7 @@
             padding-left: 16px;
             border-left: 3px solid var(--brand-yellow);
             color: #f5fbff;
-            font-size: clamp(0.86rem, 1.15vw, 1.16rem);
+            font-size: clamp(0.82rem, 1vw, 1rem);
             font-weight: 800;
             letter-spacing: 0.08em;
             line-height: 1.35;
@@ -731,7 +688,7 @@
             margin-bottom: 9px;
             color: var(--brand-yellow);
             font-family: 'DM Sans', sans-serif;
-            font-size: 0.22em;
+            font-size: 0.25em;
             font-weight: 700;
             letter-spacing: 0.18em;
             line-height: 1;
@@ -767,7 +724,7 @@
             gap: 18px;
             margin-top: 18px;
             color: rgba(255,255,255,0.8);
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
@@ -776,7 +733,7 @@
             display: block;
             max-width: 280px;
             color: rgba(255,255,255,0.8);
-            font-size: 0.68rem;
+            font-size: 0.66rem;
             line-height: 1.55;
             text-align: right;
             text-transform: none;
@@ -843,6 +800,19 @@
         body.dark-theme .login-shell { background: #0b1222; }
         body.dark-theme .promo-panel { background: linear-gradient(135deg, #050c22, #112356); }
         body.dark-theme .input-wrap input { border-color: rgba(148, 163, 184, 0.26); }
+        body.dark-theme .login-role-switch {
+            border-color: rgba(148, 163, 184, 0.2);
+            background: linear-gradient(180deg, #172338, #111b2d);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 14px 28px rgba(2,8,23,0.22);
+        }
+        body.dark-theme .login-role-switch::before {
+            background: linear-gradient(120deg, rgba(255,255,255,0.06), transparent 30%, rgba(255,255,255,0.02) 70%, transparent);
+        }
+        body.dark-theme .login-role-tab.is-active {
+            background: linear-gradient(135deg, rgba(59,130,246,0.22), rgba(240,197,45,0.12));
+            color: #f5f8ff;
+            box-shadow: inset 0 0 0 1px rgba(143,201,255,0.12), 0 8px 18px rgba(2,8,23,0.2);
+        }
         body.dark-theme .btn-login:hover, body.dark-theme .btn-login:focus-visible { background: #ffe071; }
 
         @media (prefers-reduced-motion: reduce) {
@@ -883,11 +853,24 @@
             }
 
             .login-page {
-                padding: 78px 12px 18px;
+                padding: 92px 12px 18px;
             }
 
             .brand-top {
+                top: 14px;
+                left: 16px;
                 margin-left: 0;
+                gap: 8px;
+                font-size: 0.76rem;
+            }
+
+            .brand-logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .brand-top .brand-text {
+                padding-left: 9px;
             }
 
             .login-panel {
@@ -895,8 +878,12 @@
             }
 
             .login-panel h1 {
-                margin-bottom: 28px;
-                font-size: 2.8rem;
+                margin-bottom: 18px;
+                font-size: 2.2rem;
+            }
+
+            .promo-copy h2 {
+                font-size: 2.35rem;
             }
 
             .promo-panel {
@@ -905,13 +892,8 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-theme">
     <div class="login-page">
-        <button class="theme-toggle" type="button" aria-label="Aktifkan tampilan gelap" aria-pressed="false">
-            <span class="toggle-label"><span aria-hidden="true">☀</span><span aria-hidden="true">☾</span></span>
-            <span class="toggle-knob"></span>
-        </button>
-
         <div class="brand-top">
             <img src="https://cdn.phototourl.com/member/2026-09-09-492110fd-2dae-4e72-a8d1-e42be48c0ba2.png" alt="Logo Salumpat Saindege" class="brand-logo">
             <div class="brand-text">
@@ -937,7 +919,7 @@
                     @csrf
 
                     <div class="login-role-switch" role="tablist" aria-label="Pilih tipe login">
-                        <button type="button" class="login-role-tab is-active" data-role="user" aria-pressed="true">Wajib Pajak</button>
+                        <button type="button" class="login-role-tab is-active" data-role="user" aria-pressed="true">User</button>
                         <button type="button" class="login-role-tab" data-role="admin" aria-pressed="false">Admin</button>
                     </div>
                     <input type="hidden" name="login_as" id="login_as" value="user">
@@ -1053,24 +1035,6 @@
             });
         });
 
-        const themeToggle = document.querySelector('.theme-toggle');
-        const body = document.body;
-
-        const applyTheme = function(theme) {
-            const isDark = theme === 'dark';
-            body.classList.toggle('dark-theme', isDark);
-            themeToggle.setAttribute('aria-pressed', String(isDark));
-            themeToggle.setAttribute('aria-label', isDark ? 'Aktifkan tampilan terang' : 'Aktifkan tampilan gelap');
-            localStorage.setItem('auth-theme', theme);
-        };
-
-        const savedTheme = localStorage.getItem('auth-theme') || localStorage.getItem('login-theme') || 'light';
-        applyTheme(savedTheme);
-
-        themeToggle.addEventListener('click', function() {
-            const nextTheme = body.classList.contains('dark-theme') ? 'light' : 'dark';
-            applyTheme(nextTheme);
-        });
     </script>
 </body>
 </html>

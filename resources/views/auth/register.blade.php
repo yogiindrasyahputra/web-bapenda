@@ -83,61 +83,6 @@
             background: rgba(22, 127, 122, 0.12);
         }
 
-        .theme-toggle {
-            position: fixed;
-            top: 18px;
-            right: 20px;
-            z-index: 5;
-            width: 64px;
-            height: 32px;
-            padding: 4px;
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            background: rgba(255,255,255,0.72);
-            box-shadow: 0 8px 18px rgba(17, 45, 68, 0.14);
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .theme-toggle:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 22px rgba(17, 45, 68, 0.2);
-        }
-
-        body.dark-theme .theme-toggle {
-            background: #1e293b;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
-        }
-
-        body.dark-theme .theme-toggle:hover {
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.42);
-        }
-
-        .toggle-knob {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: var(--brand-yellow);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.25s ease;
-        }
-
-        body.dark-theme .toggle-knob { transform: translateX(32px); }
-
-        .toggle-label {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10px;
-            font-size: 0.72rem;
-            pointer-events: none;
-        }
-
         .auth-shell {
             width: min(1180px, 100%);
             display: grid;
@@ -238,18 +183,10 @@
         .brand-mark {
             width: 68px;
             height: 68px;
-            display: grid;
-            place-items: center;
-            overflow: hidden;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,.16);
-            font-weight: 800;
-            color: var(--dark);
-            background: rgba(255,255,255,.1);
-            box-shadow: 0 12px 30px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.12);
+            flex: 0 0 68px;
         }
 
-        .brand-mark img { display: block; width: 100%; height: 100%; padding: 3px; object-fit: contain; }
+        .brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
 
         .brand-text {
             max-width: 340px;
@@ -619,7 +556,6 @@
 
         .promo-footer strong { color: #fff; font-weight: 700; }
 
-        .theme-toggle:focus-visible,
         input:focus-visible,
         button:focus-visible,
         .text-link a:focus-visible {
@@ -628,7 +564,7 @@
         }
 
         @media (max-width: 900px) {
-            body { padding: 70px 20px 24px; }
+            body { padding: 36px 20px 24px; }
             .auth-shell {
                 grid-template-columns: 1fr;
             }
@@ -648,12 +584,11 @@
         }
 
         @media (max-width: 520px) {
-            body { padding: 68px 14px 18px; }
-            .theme-toggle { top: 16px; right: 16px; }
+            body { padding: 26px 14px 18px; }
             .auth-shell { border-radius: 24px; }
             .promo { padding: 26px 22px 22px; }
             .brand { gap: 11px; }
-            .brand-mark { width: 54px; height: 54px; border-radius: 16px; }
+            .brand-mark { width: 54px; height: 54px; flex-basis: 54px; }
             .brand-text { font-size: .76rem; letter-spacing: .035em; }
             .brand-text small { font-size: .58rem; }
             .promo-content { margin-top: 34px; }
@@ -683,11 +618,7 @@
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
     </style>
 </head>
-<body>
-    <button class="theme-toggle" type="button" aria-label="Ganti tema" aria-pressed="false">
-        <span class="toggle-label"><span>☀</span><span>☾</span></span>
-        <span class="toggle-knob"></span>
-    </button>
+<body class="dark-theme">
 
     <div class="auth-shell">
         <aside class="promo">
@@ -804,21 +735,6 @@
     </div>
 
     <script>
-        const themeToggle = document.querySelector('.theme-toggle');
-        const body = document.body;
-
-        const applyTheme = function(theme) {
-            body.classList.toggle('dark-theme', theme === 'dark');
-            themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-            localStorage.setItem('auth-theme', theme);
-        };
-
-        applyTheme(localStorage.getItem('auth-theme') || localStorage.getItem('login-theme') || 'light');
-
-        themeToggle.addEventListener('click', function() {
-            applyTheme(body.classList.contains('dark-theme') ? 'light' : 'dark');
-        });
-
         document.querySelectorAll('.toggle-password').forEach(function(button) {
             button.addEventListener('click', function() {
                 const target = document.getElementById(this.dataset.target);

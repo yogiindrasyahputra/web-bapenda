@@ -23,9 +23,6 @@
             --link: #294d7a;
             --error: #d9534f;
             --success: #1f9d75;
-            --theme-toggle-bg: rgba(255,255,255,0.72);
-            --theme-toggle-shadow: rgba(17, 45, 68, 0.14);
-            --theme-toggle-knob: var(--brand-yellow);
             --field-bg: #f6f8f9;
         }
 
@@ -36,14 +33,14 @@
             --dark: #edf4ff;
             --dark-2: #d7e5f5;
             --brand-yellow: #f8d765;
+            --primary: #79d8cf;
+            --primary-2: #9ce8df;
             --line: rgba(148, 163, 184, 0.24);
-            --muted: #a8b6c9;
+            --muted: #b9c7d9;
             --text: #edf4ff;
-            --link: #9ebeff;
-            --theme-toggle-bg: rgba(15, 23, 42, 0.9);
-            --theme-toggle-shadow: rgba(0, 0, 0, 0.32);
-            --theme-toggle-knob: #f8d765;
-            --field-bg: rgba(15, 23, 42, 0.92);
+            --link: #a8d3ff;
+            --error: #ff9b9b;
+            --field-bg: #111d30;
         }
 
         * { box-sizing: border-box; }
@@ -62,49 +59,6 @@
             transition: background 0.25s ease, color 0.25s ease;
         }
 
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 20;
-            width: 62px;
-            height: 32px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            background: var(--theme-toggle-bg);
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), 0 6px 16px var(--theme-toggle-shadow);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            padding: 4px;
-            transition: all 0.25s ease;
-        }
-
-        .theme-toggle .toggle-knob {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: var(--theme-toggle-knob);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-            transition: transform 0.25s ease, background 0.25s ease;
-        }
-
-        body.dark-theme .theme-toggle .toggle-knob {
-            transform: translateX(28px);
-        }
-
-        .theme-toggle .toggle-label {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 7px;
-            font-size: 0.68rem;
-            color: var(--muted);
-            pointer-events: none;
-        }
-
         .admin-register-shell {
             width: min(1100px, 100%);
             display: grid;
@@ -114,6 +68,12 @@
             border-radius: 30px;
             overflow: hidden;
             box-shadow: 0 28px 70px rgba(27, 46, 77, 0.16);
+        }
+
+        body.dark-theme .admin-register-shell {
+            background: #101a2c;
+            border-color: rgba(148, 163, 184, 0.18);
+            box-shadow: 0 32px 90px rgba(0, 0, 0, 0.42);
         }
 
         .admin-side {
@@ -372,7 +332,7 @@
 
         .form-header h2 {
             margin: 12px 0 8px;
-            font-size: 1.7rem;
+            font-size: clamp(1.55rem, 2vw, 1.85rem);
             letter-spacing: -0.04em;
             color: var(--primary-2);
         }
@@ -380,7 +340,8 @@
         .form-header p {
             margin: 0;
             color: var(--muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            line-height: 1.6;
         }
 
         .error-box {
@@ -388,10 +349,20 @@
             border-radius: 12px;
             border: 1px solid rgba(197,66,66,0.15);
             background: rgba(197,66,66,0.08);
-            color: var(--danger);
+            color: var(--error);
             font-size: 0.84rem;
             font-weight: 700;
             padding: 10px 12px;
+            line-height: 1.5;
+        }
+
+        .error-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .error-box li + li {
+            margin-top: 4px;
         }
 
         form {
@@ -411,9 +382,9 @@
         }
 
         label {
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.045em;
             text-transform: uppercase;
             color: var(--muted);
         }
@@ -479,10 +450,24 @@
             border-radius: 12px;
             background: var(--field-bg);
             padding: 13px 14px 13px 44px;
-            font-size: 0.94rem;
+            font-size: 0.92rem;
             color: var(--text);
             outline: none;
             transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+
+        input::placeholder {
+            color: #8b9bb0;
+            opacity: 1;
+        }
+
+        body.dark-theme input {
+            border-color: rgba(148, 163, 184, 0.24);
+            color-scheme: dark;
+        }
+
+        body.dark-theme input::placeholder {
+            color: #91a1b7;
         }
 
         input:focus {
@@ -525,13 +510,17 @@
             margin-top: 16px;
             text-align: center;
             color: var(--muted);
-            font-size: 0.86rem;
+            font-size: 0.88rem;
         }
 
         .text-link a {
             color: var(--primary-2);
             font-weight: 800;
             text-decoration: none;
+        }
+
+        body.dark-theme .text-link a {
+            color: var(--link);
         }
 
         @media (max-width: 900px) {
@@ -546,23 +535,13 @@
 
         @media (max-width: 560px) {
             body { padding: 20px 14px; }
-            .theme-toggle {
-                top: 12px;
-                right: 12px;
-                width: 58px;
-                height: 30px;
-            }
             .field-grid { grid-template-columns: 1fr; }
             .form-panel { padding: 20px 14px; }
             .form-card { padding: 22px 16px; }
         }
     </style>
 </head>
-<body>
-    <button class="theme-toggle" type="button" aria-label="Aktifkan mode gelap" aria-pressed="false">
-        <span class="toggle-label"><span aria-hidden="true">☀</span><span aria-hidden="true">☾</span></span>
-        <span class="toggle-knob"></span>
-    </button>
+<body class="dark-theme">
 
     <div class="admin-register-shell">
         <aside class="admin-side">
@@ -607,8 +586,12 @@
                 </div>
 
                 @if ($errors->any())
-                    <div class="error-box">
-                        {{ $errors->first() }}
+                    <div class="error-box" role="alert" aria-live="assertive">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 @endif
 
@@ -622,7 +605,7 @@
                                 <span class="field-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
                                 </span>
-                                <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Contoh: Ir. Sari Murni" required autofocus>
+                                <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Contoh: Ir. Sari Murni" maxlength="255" autocomplete="name" required autofocus>
                             </div>
                         </div>
 
@@ -632,7 +615,7 @@
                                 <span class="field-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
                                 </span>
-                                <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="nama@instansi.go.id" required>
+                                <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="nama@instansi.go.id" maxlength="255" autocomplete="email" required>
                             </div>
                         </div>
 
@@ -642,7 +625,7 @@
                                 <span class="field-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.06 5.18 2 2 0 0 1 5.05 3h3a2 2 0 0 1 2 1.72l.42 2.1a2 2 0 0 1-.54 1.82L8.3 9.29a16 16 0 0 0 6.41 6.41l.65-.65a2 2 0 0 1 1.82-.54l2.1.42A2 2 0 0 1 19.28 18Z"/></svg>
                                 </span>
-                                <input id="phone" type="text" name="phone" value="{{ old('phone') }}" placeholder="0812xxxxxx" required>
+                                <input id="phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="0812xxxxxx" minlength="10" maxlength="20" pattern="[0-9+\x28\x29\x20\-]{10,20}" autocomplete="tel" required>
                             </div>
                         </div>
 
@@ -652,7 +635,7 @@
                                 <span class="field-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V19h14V9.5"/><path d="M9 19v-7h6v7"/></svg>
                                 </span>
-                                <input id="institution" type="text" name="institution" value="{{ old('institution') }}" placeholder="Contoh: Badan Pengelolaan Keuangan dan Pendapatan Daerah" required>
+                                <input id="institution" type="text" name="institution" value="{{ old('institution') }}" placeholder="Contoh: Badan Pengelolaan Keuangan dan Pendapatan Daerah" minlength="5" maxlength="255" autocomplete="organization" required>
                             </div>
                         </div>
 
@@ -662,7 +645,7 @@
                                 <span class="field-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24"><path d="M8 7V6a4 4 0 0 1 8 0v1"/><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M3 12h18"/></svg>
                                 </span>
-                                <input id="position" type="text" name="position" value="{{ old('position') }}" placeholder="Contoh: Kepala Seksi Pajak Hotel" required>
+                                <input id="position" type="text" name="position" value="{{ old('position') }}" placeholder="Contoh: Kepala Seksi Pajak Hotel" minlength="5" maxlength="255" required>
                             </div>
                         </div>
 
@@ -672,7 +655,7 @@
                                 <span class="field-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
                                 </span>
-                                <input id="nip" type="text" name="nip" value="{{ old('nip') }}" placeholder="16-18 digit NIP/NIK" maxlength="18" inputmode="numeric" required>
+                                <input id="nip" type="text" name="nip" value="{{ old('nip') }}" placeholder="16-18 digit NIP/NIK" minlength="16" maxlength="18" pattern="[0-9]{16,18}" inputmode="numeric" autocomplete="off" required>
                             </div>
                         </div>
 
@@ -682,7 +665,7 @@
                                 <span class="field-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg>
                                 </span>
-                                <input id="password" type="password" name="password" placeholder="Minimal 8 karakter" required>
+                                <input id="password" type="password" name="password" placeholder="Minimal 8 karakter" minlength="8" autocomplete="new-password" required>
                                 <button type="button" class="toggle-password" data-target="password" aria-label="Lihat password">
                                     <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 10.6a2 2 0 0 0 2.8 2.8M9.9 4.2A10.7 10.7 0 0 1 12 4c5 0 8.7 4 10 8a13.5 13.5 0 0 1-3.1 5.1M6.6 6.6C4.8 7.8 3.5 9.7 2 12c1.3 4 5 8 10 8 1.1 0 2.1-.2 3-.5"/></svg>
                                     <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -696,7 +679,7 @@
                                 <span class="field-icon" aria-hidden="true">
                                     <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg>
                                 </span>
-                                <input id="password_confirmation" type="password" name="password_confirmation" placeholder="Ulangi password" required>
+                                <input id="password_confirmation" type="password" name="password_confirmation" placeholder="Ulangi password" minlength="8" autocomplete="new-password" required>
                                 <button type="button" class="toggle-password" data-target="password_confirmation" aria-label="Lihat password">
                                     <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 10.6a2 2 0 0 0 2.8 2.8M9.9 4.2A10.7 10.7 0 0 1 12 4c5 0 8.7 4 10 8a13.5 13.5 0 0 1-3.1 5.1M6.6 6.6C4.8 7.8 3.5 9.7 2 12c1.3 4 5 8 10 8 1.1 0 2.1-.2 3-.5"/></svg>
                                     <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -716,25 +699,6 @@
     </div>
 
     <script>
-        const themeToggle = document.querySelector('.theme-toggle');
-        const body = document.body;
-
-        const applyTheme = function(theme) {
-            const isDark = theme === 'dark';
-            body.classList.toggle('dark-theme', isDark);
-            themeToggle.setAttribute('aria-pressed', String(isDark));
-            themeToggle.setAttribute('aria-label', isDark ? 'Aktifkan mode terang' : 'Aktifkan mode gelap');
-            localStorage.setItem('admin-register-theme', theme);
-        };
-
-        const savedTheme = localStorage.getItem('admin-register-theme') || 'light';
-        applyTheme(savedTheme);
-
-        themeToggle.addEventListener('click', function() {
-            const nextTheme = body.classList.contains('dark-theme') ? 'light' : 'dark';
-            applyTheme(nextTheme);
-        });
-
         document.querySelectorAll('.toggle-password').forEach(function(button) {
             button.addEventListener('click', function() {
                 const target = document.getElementById(this.dataset.target);

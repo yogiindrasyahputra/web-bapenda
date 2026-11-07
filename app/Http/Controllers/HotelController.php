@@ -65,8 +65,8 @@ class HotelController extends Controller
             'nama' => 'required|string|max:150',
             'alamat' => 'required|string',
             'wajib_pajak' => 'nullable|boolean',
-            'lat' => 'nullable|numeric',
-            'lng' => 'nullable|numeric',
+            'lat' => 'nullable|numeric|between:-90,90',
+            'lng' => 'nullable|numeric|between:-180,180',
             'status' => 'required|in:aktif,nonaktif',
             'foto' => 'nullable|image|max:4096',
         ]);
@@ -89,8 +89,8 @@ class HotelController extends Controller
             'nama' => 'required|string|max:150',
             'alamat' => 'required|string',
             'wajib_pajak' => 'nullable|boolean',
-            'lat' => 'nullable|numeric',
-            'lng' => 'nullable|numeric',
+            'lat' => 'nullable|numeric|between:-90,90',
+            'lng' => 'nullable|numeric|between:-180,180',
             'status' => 'required|in:aktif,nonaktif',
             'foto' => 'nullable|image|max:4096',
         ]);

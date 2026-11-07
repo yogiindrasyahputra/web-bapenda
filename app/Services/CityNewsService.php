@@ -11,21 +11,26 @@ class CityNewsService
 {
     private const SOURCE_URL = 'https://web.padangsidimpuankota.go.id/berita';
 
+    private const NEWS_POOL_SIZE = 12;
+
     public function latest(int $limit = 3): array
     {
-        $cacheKey = 'padangsidimpuan-city-news-v3-' . now()->toDateString() . '-' . $limit;
+        $today = now('Asia/Jakarta');
+        $cacheKey = 'padangsidimpuan-city-news-v6-'.$today->toDateString().'-'.$limit;
 
-        return Cache::remember($cacheKey, now()->endOfDay(), function () use ($limit) {
+        return Cache::remember($cacheKey, $today->copy()->endOfDay(), function () use ($limit, $today) {
             try {
-                $response = Http::acceptHtml()->timeout(10)->get(self::SOURCE_URL);
+                $response = Http::withHeaders(['Accept' => 'text/html'])
+                    ->timeout(10)
+                    ->get(self::SOURCE_URL);
 
                 if ($response->failed()) {
-                    return $this->fallbackNews($limit);
+                    return $this->rotateDaily($this->fallbackNews(self::NEWS_POOL_SIZE), $limit, $today);
                 }
 
-                $document = new \DOMDocument();
+                $document = new \DOMDocument;
                 libxml_use_internal_errors(true);
-                $document->loadHTML('<?xml encoding="UTF-8">' . $response->body());
+                $document->loadHTML('<?xml encoding="UTF-8">'.$response->body());
                 libxml_clear_errors();
 
                 $xpath = new \DOMXPath($document);
@@ -49,19 +54,33 @@ class CityNewsService
                         'title' => Str::limit($title, 92),
                         'url' => $this->absoluteUrl($href),
                         'description' => 'Baca berita terbaru Pemerintah Kota Padangsidimpuan.',
-                        'image' => $this->imageFor($href),
+                        'image' => $this->imageFrom($link) ?? $this->imageFor($href),
                     ];
 
-                    if (count($news) === $limit) {
+                    if (count($news) === max(self::NEWS_POOL_SIZE, $limit)) {
                         break;
                     }
                 }
 
-                return $news ?: $this->fallbackNews($limit);
-            } catch (Throwable) {
-                return $this->fallbackNews($limit);
+                return $this->rotateDaily($news ?: $this->fallbackNews(self::NEWS_POOL_SIZE), $limit, $today);
+            } catch (Throwable $exception) {
+                report($exception);
+
+                return $this->rotateDaily($this->fallbackNews(self::NEWS_POOL_SIZE), $limit, $today);
             }
         });
+    }
+
+    private function rotateDaily(array $news, int $limit, \Illuminate\Support\Carbon $today): array
+    {
+        if ($news === []) {
+            return [];
+        }
+
+        $offset = ($today->dayOfYear - 1) % count($news);
+        $rotatedNews = array_merge(array_slice($news, $offset), array_slice($news, 0, $offset));
+
+        return array_slice($rotatedNews, 0, $limit);
     }
 
     private function fallbackNews(int $limit): array
@@ -98,12 +117,37 @@ class CityNewsService
         };
     }
 
+    private function imageFrom(\DOMElement $link): ?string
+    {
+        $images = (new \DOMXPath($link->ownerDocument))->query(
+            'ancestor::div[contains(concat(" ", normalize-space(@class), " "), " post-item-horizontal ")][1]//img[1]',
+            $link
+        );
+
+        if ($images === false || ! $images->item(0) instanceof \DOMElement) {
+            return null;
+        }
+
+        $image = $images->item(0);
+        $source = trim($image->getAttribute('data-src')) ?: trim($image->getAttribute('src'));
+
+        if ($source === '' || Str::contains($source, 'img_bg_md.png')) {
+            return null;
+        }
+
+        return $this->absoluteUrl($source);
+    }
+
     private function absoluteUrl(string $href): string
     {
         if (Str::startsWith($href, ['http://', 'https://'])) {
             return $href;
         }
 
-        return 'https://web.padangsidimpuankota.go.id/' . ltrim($href, '/');
+        if (Str::startsWith($href, '//')) {
+            return 'https:'.$href;
+        }
+
+        return 'https://web.padangsidimpuankota.go.id/'.ltrim($href, '/');
     }
 }

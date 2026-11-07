@@ -94,7 +94,20 @@
         margin: 0 auto;
         padding: 8px 0 42px;
         color: #173545;
+        font-family: 'Segoe UI', 'Inter', 'DM Sans', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
         background: linear-gradient(180deg, #f5f9fb 0%, #eef5f7 100%);
+    }
+    .org-page * { box-sizing: border-box; }
+    .org-page p,
+    .org-page span,
+    .org-page strong,
+    .org-page b,
+    .org-page small,
+    .org-page label,
+    .org-page li {
+        line-height: 1.6;
     }
     .org-hero {
         position: relative;
@@ -126,27 +139,27 @@
         width: fit-content;
         margin-bottom: 30px;
         color: rgba(255,255,255,.8);
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 700;
         transition: color .2s ease;
     }
     .org-back:hover { color: #ffc338; }
     .org-eyebrow, .org-section-label {
         color: #ffc338;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 800;
         letter-spacing: .14em;
     }
     .org-hero h1 {
         margin: 7px 0 4px;
         color: #fff;
-        font: 700 clamp(30px, 4vw, 52px)/1.06 'Playfair Display', serif;
+        font: 700 clamp(30px, 4vw, 52px)/1.06 'Segoe UI', 'Inter', sans-serif;
         letter-spacing: -.04em;
     }
     .org-hero p {
         margin: 0;
         color: rgba(255,255,255,.8);
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.7;
     }
     .org-hero-actions { display: flex; align-items: center; gap: 22px; }
@@ -159,7 +172,7 @@
         border-radius: 10px;
         color: #fff;
         background: rgba(255,255,255,.1);
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 800;
         cursor: pointer;
         transition: background .2s ease, transform .2s ease, border-color .2s ease;
@@ -182,14 +195,14 @@
     .org-intro h2 {
         margin: 5px 0 0;
         color: #123f59;
-        font: 700 clamp(24px, 3vw, 38px)/1.1 'Playfair Display', serif;
+        font: 700 clamp(28px, 3vw, 42px)/1.1 'Segoe UI', 'Inter', sans-serif;
         letter-spacing: -.02em;
     }
     .org-intro p {
         max-width: 500px;
         margin: 0;
         color: #617986;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.7;
     }
     .org-overview {
@@ -218,7 +231,7 @@
     .org-overview-card span {
         margin-top: 6px;
         color: #69808c;
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 700;
         letter-spacing: .04em;
         text-transform: uppercase;
@@ -259,13 +272,13 @@
     }
     .org-chart-heading span {
         color: #123f59;
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 900;
         letter-spacing: .14em;
     }
     .org-chart-heading small {
         color: #83979d;
-        font-size: 10px;
+        font-size: 11px;
         letter-spacing: .03em;
     }
     .org-node {
@@ -278,7 +291,7 @@
     .org-node-kicker {
         display: block;
         color: #0a7d7a;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 900;
         letter-spacing: .05em;
         text-transform: uppercase;
@@ -286,7 +299,7 @@
     .org-node strong {
         display: block;
         color: #173545;
-        font-size: 13px;
+        font-size: 14px;
         line-height: 1.4;
     }
     .org-head-node {
@@ -297,7 +310,7 @@
         border-top: 5px solid #ffc338;
         background: linear-gradient(180deg, #fff 0%, #f8faf7 100%);
     }
-    .org-head-node strong { margin-top: 8px; font-size: 16px; }
+    .org-head-node strong { margin-top: 8px; font-size: 17px; }
     .org-connector-main {
         width: 2px;
         height: 30px;
@@ -320,9 +333,9 @@
         align-items: center;
     }
     .org-small-node { padding: 14px 14px; }
-    .org-small-node strong { color: #55727b; font-size: 11px; }
+    .org-small-node strong { color: #55727b; font-size: 12px; }
     .org-unit-node { padding: 14px 16px; }
-    .org-unit-node strong { margin-top: 7px; font-size: 11px; }
+    .org-unit-node strong { margin-top: 7px; font-size: 12px; }
     .org-branch-line {
         height: 2px;
         margin: 0 7% 28px;
@@ -363,20 +376,20 @@
         display: block;
         margin-bottom: 8px;
         color: #0a7d7a;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 900;
     }
     .org-field h3 {
         min-height: 36px;
         margin: 0 0 10px;
         color: #123f59;
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.2;
     }
     .org-field header strong {
         display: block;
         color: #58727d;
-        font-size: 11px;
+        font-size: 12px;
         line-height: 1.4;
     }
     .org-subunit {
@@ -387,14 +400,14 @@
     .org-subunit b {
         display: block;
         color: #173545;
-        font-size: 12px;
+        font-size: 13px;
         line-height: 1.45;
     }
     .org-subunit span {
         display: block;
         margin-top: 11px;
         color: #66818a;
-        font-size: 11px;
+        font-size: 12px;
         line-height: 1.4;
     }
     .org-functional {
@@ -403,7 +416,7 @@
         border-radius: 8px;
         color: #0a7d7a;
         background: linear-gradient(135deg, rgba(10,125,122,.12), rgba(10,125,122,.18));
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 900;
         text-align: center;
         letter-spacing: .04em;
@@ -597,15 +610,23 @@
     .org-dark .org-chart-heading span::before { background: #d4aa5b; }
     .org-dark .org-subunit { background: rgba(16,42,54,.45); }
 
+    @media (max-width: 900px) {
+        .org-hero { align-items: flex-start; }
+        .org-intro { display: block; }
+        .org-intro p { margin-top: 12px; }
+        .org-overview { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .org-legend { grid-column: 1 / -1; justify-content: center; margin: 4px 0 0; padding: 8px 0 0; }
+    }
+
     @media (max-width: 680px) {
         .org-page { padding: 0 12px 28px; }
         .org-hero { align-items: flex-start; padding: 24px 22px; }
+        .org-hero h1 { font-size: clamp(34px, 10vw, 46px); }
+        .org-hero p { font-size: 14px; }
         .org-hero-actions { align-items: flex-end; flex-direction: column-reverse; gap: 16px; }
         .org-theme-toggle b { display: none; }
         .org-theme-toggle { width: 35px; height: 35px; justify-content: center; padding: 0; border-radius: 50%; }
         .org-back { margin-bottom: 25px; }
-        .org-intro { display: block; }
-        .org-intro p { margin-top: 12px; }
         .org-overview { display: grid; grid-template-columns: repeat(2, 1fr); }
         .org-overview-card { min-width: 0; }
         .org-legend { grid-column: 1 / -1; justify-content: center; margin: 4px 0 0; padding: 8px 0 0; }
